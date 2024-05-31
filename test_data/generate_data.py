@@ -361,7 +361,7 @@ def delete_all_orders():
 
 # create_many_customers(10)
 # create_single_customer()
-create_paid_orders_for_random_customers(1000)
+# create_paid_orders_for_random_customers(1000)
 
 # create_metafields_for_order(
 #     5551028961418,

@@ -11,6 +11,24 @@ https://github.com/yvznmn/bake_my_day_modules
 python3 -m venv venv
 source venv/bin/activate
 
+export PYTHONPATH="${PYTHONPATH}:<YOUR_PROJECT_ROOT>"
+
+In order to generate data
+
+cd test_data
+python -c "from generate_data import <function_name>; <function_name>(<params_if_any>)"
+
+dbt settup
+
+dbt init <dbt_folder_name>, pick redshift and finish questioneer
+
+dbt debug
+
+
+Redshift
+
+CREATE SCHEMA IF NOT EXISTS <schema_name>;
+
 
 **CONCEPTUAL MODELING**
 

@@ -2,8 +2,6 @@ import os
 
 import requests
 from dotenv import load_dotenv
-from faker import Faker
-import random
 
 def get_base_endpoint():
 

@@ -5,7 +5,6 @@ import requests
 import time
 import datetime
 import pytz
-import json
 
 def random_datetime(start, end):
     """

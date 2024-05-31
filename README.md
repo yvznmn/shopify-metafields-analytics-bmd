@@ -8,6 +8,10 @@ The actual code is in my personal repository. The reason i want to use that is t
 https://github.com/yvznmn/bake_my_day_modules
 
 
+python3 -m venv venv
+source venv/bin/activate
+
+
 **CONCEPTUAL MODELING**
 
 ![alt text](bmd_conceptual_data_modeling.png)

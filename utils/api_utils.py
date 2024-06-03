@@ -1,6 +1,7 @@
 import os
 
 import requests
+import json
 from dotenv import load_dotenv
 
 def get_base_endpoint():
@@ -38,6 +39,10 @@ def get_api_url(final_endpoint):
 
     return f'{get_base_endpoint()}{final_endpoint}'
 
+def get_graphql_url():
+
+    return f'{get_base_endpoint()}graphql.json'
+
 def get_response(final_endpoint):
 
     url = get_api_url(final_endpoint)
@@ -52,3 +57,17 @@ def get_response(final_endpoint):
         print(customers)
     else:
         print(f"Failed to fetch data: {response.status_code}, {response.text}")
+
+def execute_graphql_query(query):
+
+    url = get_graphql_url()
+    header = get_header()
+
+    response = requests.post(url, json={'query': query}, headers=header)
+
+    if response.status_code == 200:
+        print("Query Result:")
+        print(json.dumps(response.json(), indent=4))
+    else:
+        print(f"Query failed with status code {response.status_code}")
+        print(response.text)

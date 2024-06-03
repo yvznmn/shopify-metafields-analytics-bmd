@@ -18,6 +18,12 @@ In order to generate data
 cd test_data
 python -c "from generate_data import <function_name>; <function_name>(<params_if_any>)"
 
+AWS REdshift Serverless
+
+Create your DW
+provide necessary security inbound rules for the REdshift port and proper IP
+provide necessary VPC Network ACL inbound rules for the REdshift port and proper IP
+
 dbt settup
 
 dbt init <dbt_folder_name>, pick redshift and finish questioneer

@@ -1,39 +1,52 @@
 from pyspark.sql import SparkSession
-from dotenv import load_dotenv
-import os
+from get_orders_by_date_range import collect_order_data
 
-
-# Load environment variables from .env file
-load_dotenv()
-
-# Access the environment variables
-aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
-aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
-
+# Initialize Spark session with Delta Lake support
 spark = SparkSession.builder \
-    .appName("BMDAnalytics") \
-    .config("spark.jars.packages", "io.delta:delta-core_2.12:1.2.1,org.apache.hadoop:hadoop-aws:3.2.0") \
-    .config("spark.hadoop.fs.s3a.access.key", aws_access_key_id) \
-    .config("spark.hadoop.fs.s3a.secret.key", aws_secret_access_key) \
-    .config("spark.hadoop.fs.s3a.endpoint", "s3.amazonaws.com") \
-    .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
+    .appName("DeltaLakeSQLExample") \
+    .config("spark.jars.packages", "io.delta:delta-core_2.12:1.2.1") \
     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
     .getOrCreate()
 
-
-from delta.tables import DeltaTable
-
 # Path to Delta table
-delta_table_path = "s3://devbmdanalayticsdata/silver/orders/"
+delta_table_path = "s3a://devbmdanalayticsdata/silver/orders"
 
-# Load Delta table
-delta_table = DeltaTable.forPath(spark, delta_table_path)
+# Load Delta table into a DataFrame
+delta_df = spark.read.format("delta").load(delta_table_path)
 
-# Example DataFrame for new data
-new_data = [
-    ("1", "order1", "2024-01-01", "completed", "John Doe", 150.0),  # Updated order
-    ("3", "order3", "2024-01-03", "paid", "Alice Johnson", 300.0)   # New order
-]
-new_columns = ["order_id", "order_name", "created_at", "financial_status", "customer_name", "total_price"]
-new_df = spark.createDataFrame(new_data, new_columns)
+# Create a temporary view for the existing Delta table
+delta_df.createOrReplaceTempView("orders")
+spark.sql("SELECT * FROM orders").show()
+
+start_date = "2023-05-27"
+end_date = "2023-05-27"
+new_data = collect_order_data(start_date, end_date)
+
+new_df = spark.createDataFrame(new_data)
+new_df.show()
+
+# # Create a temporary view for the new data
+# new_df.createOrReplaceTempView("new_orders")
+
+# # Perform the upsert operation using SQL
+
+# # Use a SQL query to delete matched records
+# spark.sql("""
+# DELETE FROM orders
+# USING new_orders
+# WHERE orders.order_id = new_orders.order_id
+# """)
+
+# # Use a SQL query to insert new and updated records
+# spark.sql("""
+# INSERT INTO orders
+# SELECT * FROM new_orders
+# """)
+
+# # Verify the result
+# updated_df = spark.read.format("delta").load(delta_table_path)
+# updated_df.show()
+
+# Stop the Spark session
+spark.stop()

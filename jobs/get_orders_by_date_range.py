@@ -1,24 +1,14 @@
 from utils import api_utils
+from utils import datetime_utils
 from datetime import datetime, timedelta
 import requests
 import json
 
 # Define the function to fetch orders with date range
 def fetch_orders(start_date, end_date, cursor=None):
-    
-    cond = f"created_at:>={start_date} created_at:<={end_date}"
-    
-    if start_date == end_date:
-        end_date_as_date = datetime.strptime(end_date, "%Y-%m-%d")
-        end_date_as_date_plus_1 = end_date_as_date + timedelta(days=1)
-        new_end_date_as_str = end_date_as_date_plus_1.strftime("%Y-%m-%d")
-        cond = f"created_at:={start_date}"
-
-    print(cond)
-
     query = f'''
     query getOrders($first: Int, $after: String) {{
-      orders(first: $first, after: $after, query: "{cond}") {{
+      orders(first: $first, after: $after, query: "processed_at:>={datetime_utils.local_to_utc_date(start_date)}T00:00:00Z AND processed_at:<={datetime_utils.local_to_utc_date(end_date)}T23:59:59Z") {{
         pageInfo {{
           hasNextPage
           endCursor
@@ -28,10 +18,11 @@ def fetch_orders(start_date, end_date, cursor=None):
             id
             name
             createdAt
+            processedAt
+            updatedAt
             displayFinancialStatus
             customer {{
-              firstName
-              lastName
+              id
             }}
             totalPriceSet {{
               shopMoney {{
@@ -59,6 +50,7 @@ def fetch_orders(start_date, end_date, cursor=None):
     else:
         raise Exception(f"Query failed with status code {response.status_code}: {response.text}")
 
+
 # Function to collect order data into a dictionary based on date range
 def collect_order_data(start_date, end_date):
     all_orders = []
@@ -83,31 +75,21 @@ def collect_order_data(start_date, end_date):
     orders_dict = []
     for order in all_orders:
         order_data = order['node']
-        customer_name = f"{order_data['customer']['firstName']} {order_data['customer']['lastName']}"
+        order_id = order_data['id'].split("/")[-1]
+        customer_id = order_data['customer']['id'].split("/")[-1]
         total_price = f"{order_data['totalPriceSet']['shopMoney']['amount']} {order_data['totalPriceSet']['shopMoney']['currencyCode']}"
         order_info = {
-            "Order ID": order_data['id'],
-            "Order Name": order_data['name'],
-            "Created At": order_data['createdAt'],
-            "Financial Status": order_data['displayFinancialStatus'],
-            "Customer Name": customer_name,
-            "Total Price": total_price
+            "order_id": order_id,
+            "order_name": order_data['name'],
+            "created_at": order_data['createdAt'],
+            "processed_at": order_data['processedAt'],
+            "updated_at": order_data['updatedAt'],
+            "financial_status": order_data['displayFinancialStatus'],
+            "customer_id": customer_id,
+            "total_price": total_price
         }
         orders_dict.append(order_info)
 
     return orders_dict
 
-# Example usage: Collect orders data within the date range
-start_date = "2024-05-30"
-end_date = "2024-05-30"
-orders_data = collect_order_data(start_date, end_date)
 
-# Print all fetched orders from the dictionary
-for order in orders_data:
-    print(f"Order ID: {order['Order ID']}")
-    print(f"Order Name: {order['Order Name']}")
-    print(f"Created At: {order['Created At']}")
-    print(f"Financial Status: {order['Financial Status']}")
-    print(f"Customer Name: {order['Customer Name']}")
-    print(f"Total Price: {order['Total Price']}")
-    print("="*40)

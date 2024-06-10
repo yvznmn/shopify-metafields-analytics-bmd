@@ -11,7 +11,13 @@ https://github.com/yvznmn/bake_my_day_modules
 python3 -m venv venv
 source venv/bin/activate
 
+Install Necessary Libraries
+pip install pyspark==3.2.1
+pip install delta-spark==1.2.1
+
 export PYTHONPATH="${PYTHONPATH}:<YOUR_PROJECT_ROOT>"
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+export AWS_SECRET_KEY=<AWS_SECRET_ACCESS_KEY>
 
 In order to generate data
 

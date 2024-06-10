@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import os
 from pyspark.sql.types import StructType, StructField, StringType, LongType, DoubleType, TimestampType
 from utils import db_utils
-from delta.tables import DeltaTable
 
 # Load environment variables from .env file
 load_dotenv()
@@ -18,7 +17,7 @@ spark = SparkSession.builder \
     .appName("DeltaLakeSQLExample") \
     .config("spark.jars.packages", 
             "io.delta:delta-core_2.12:1.2.1,"
-            "org.apache.hadoop:hadoop-aws:3.2.0,"
+            "org.apache.hadoop:hadoop-aws:3.2.2,"
             "com.amazonaws:aws-java-sdk-bundle:1.11.563") \
     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
@@ -47,18 +46,7 @@ schema = StructType([
     StructField("total_price", DoubleType(), True)
 ])
 
-start_date = "2023-05-27"
-end_date = "2023-05-27"
-new_data = collect_order_data(start_date, end_date)
-
-new_df = spark.createDataFrame(new_data)
-
-# Cast the DataFrame to the desired schema
-new_df_casted = db_utils.cast_to_schema(new_df, schema) \
-    .write \
-    .mode("append") \
-    .partitionBy("order_id") \
-    .parquet(delta_table_path)
+db_utils.show_create_delta_table(delta_table_path=delta_table_path, table_name=table_name)
 
 # Stop the Spark session
 spark.stop()

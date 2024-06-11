@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 from pyspark.sql.types import StructType, StructField, StringType, LongType, DoubleType, TimestampType
 from utils import db_utils
+import boto3
 
 # Load environment variables from .env file
 load_dotenv()
@@ -46,7 +47,18 @@ schema = StructType([
     StructField("total_price", DoubleType(), True)
 ])
 
-db_utils.show_create_delta_table(delta_table_path=delta_table_path, table_name=table_name)
+database_name = "dev"
 
-# Stop the Spark session
+# # Initialize Glue client with region specified
+# glue = boto3.client('glue', region_name='us-east-2')
+
+# db_utils.create_glue_delta_table(glue=glue, 
+#                                  database_name=database_name, 
+#                                  schema=schema, 
+#                                  table_name=table_name, 
+#                                  delta_table_path=delta_table_path)
+
+# db_utils.create_delta_table(spark, delta_table_path, table_name, schema)
+
+# # Stop the Spark session
 spark.stop()

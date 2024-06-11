@@ -5,3 +5,5 @@ env
 
 logs
 dbt_redshift_env
+
+spark-warehouse

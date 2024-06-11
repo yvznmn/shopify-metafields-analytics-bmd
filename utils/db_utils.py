@@ -2,6 +2,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType
 from pyspark.sql.functions import col
+import boto3
 
 def create_delta_table(spark_session: SparkSession, delta_table_path: str, table_name: str, schema: StructType):
     """
@@ -56,3 +57,59 @@ def cast_to_schema(df, schema):
         df = df.withColumn(field.name, col(field.name).cast(field.dataType))
     print(f"Schema Casting is completed.")
     return df
+
+def convert_schema_to_glue_format(schema):
+    type_mapping = {
+        'LongType': 'bigint',
+        'StringType': 'string',
+        'TimestampType': 'timestamp',
+        'DoubleType': 'double'
+    }
+
+    print("Starting conversion of Spark StructType to Glue format...")
+
+    glue_schema = []
+
+    for field in schema.fields:
+        field_type = type(field.dataType).__name__
+        if field_type in type_mapping:
+            glue_field = {
+                'Name': field.name,
+                'Type': type_mapping[field_type]
+            }
+            glue_schema.append(glue_field)
+
+    print("Conversion completed. Resulting Glue schema:")
+
+    return glue_schema
+
+def create_glue_delta_table(glue: boto3.session.Session.client, database_name: str, schema: StructType, table_name: str, delta_table_path: str):
+
+    glue_schema = convert_schema_to_glue_format(schema=schema)
+
+    # Define the table schema
+    table_input = {
+        'Name': table_name,
+        'StorageDescriptor': {
+            'Columns': glue_schema,
+            'Location': delta_table_path,
+            'InputFormat': 'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat',
+            'OutputFormat': 'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat',
+            'SerdeInfo': {
+                'SerializationLibrary': 'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
+            }
+        },
+        'TableType': 'EXTERNAL_TABLE',
+        'Parameters': {
+            'EXTERNAL': 'TRUE',
+            'classification': 'delta',
+            'delta.table': 'true'
+        }
+    }
+
+    print("Glue table is being created")
+    glue.create_table(
+        DatabaseName=database_name,
+        TableInput=table_input
+    )
+    print("Glue table is ready.")

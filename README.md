@@ -26,6 +26,14 @@ python -c "from generate_data import <function_name>; <function_name>(<params_if
 
 AWS REdshift Serverless
 
+create delta table
+create glue database
+create glue delta table
+load with spark
+create external schema in redshift spectrum, setup iam roles(provide s3 and glue access) for it
+
+
+
 Create your DW
 provide necessary security inbound rules for the REdshift port and proper IP
 provide necessary VPC Network ACL inbound rules for the REdshift port and proper IP

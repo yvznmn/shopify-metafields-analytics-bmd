@@ -49,16 +49,16 @@ schema = StructType([
 
 database_name = "dev"
 
-# # Initialize Glue client with region specified
-# glue = boto3.client('glue', region_name='us-east-2')
+# Initialize Glue client with region specified
+glue = boto3.client('glue', region_name='us-east-2')
 
-# db_utils.create_glue_delta_table(glue=glue, 
-#                                  database_name=database_name, 
-#                                  schema=schema, 
-#                                  table_name=table_name, 
-#                                  delta_table_path=delta_table_path)
+db_utils.create_glue_delta_table(glue=glue, 
+                                 database_name=database_name, 
+                                 schema=schema, 
+                                 table_name=table_name, 
+                                 delta_table_path=delta_table_path)
 
-# db_utils.create_delta_table(spark, delta_table_path, table_name, schema)
+db_utils.create_delta_table(spark, delta_table_path, table_name, schema)
 
 # # Stop the Spark session
 spark.stop()

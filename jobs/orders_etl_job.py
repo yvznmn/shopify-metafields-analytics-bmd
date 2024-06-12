@@ -54,15 +54,16 @@ if DeltaTable.isDeltaTable(spark, delta_table_path):
 else:
     raise Exception("Delta Table does NOT exists!")
 
-start_date = "2023-05-27"
-end_date = "2023-05-27"
+start_date = "2024-01-01"
+end_date = "2024-12-31"
 new_data = collect_order_data(start_date, end_date)
 
 new_df = spark.createDataFrame(new_data)
 
 # Cast the DataFrame to the desired schema
-new_df_casted = db_utils.cast_to_schema(new_df, schema) \
-    
+new_df_casted = db_utils.cast_to_schema(new_df, schema)
+new_df_casted.printSchema()
+new_df_casted.show()
 
 # Perform the merge operation
 delta_table.alias("tgt").merge(

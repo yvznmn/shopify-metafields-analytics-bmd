@@ -77,7 +77,7 @@ def collect_order_data(start_date, end_date):
         order_data = order['node']
         order_id = order_data['id'].split("/")[-1]
         customer_id = order_data['customer']['id'].split("/")[-1]
-        total_price = f"{order_data['totalPriceSet']['shopMoney']['amount']} {order_data['totalPriceSet']['shopMoney']['currencyCode']}"
+        total_price = f"{order_data['totalPriceSet']['shopMoney']['amount']}"
         order_info = {
             "order_id": order_id,
             "order_name": order_data['name'],

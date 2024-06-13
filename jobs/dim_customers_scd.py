@@ -3,7 +3,7 @@ from get_customers_by_date_range import collect_customer_data
 from pyspark.sql.types import StructType, StructField, StringType, LongType, DoubleType, TimestampType, IntegerType
 from utils import db_utils, spark_utils
 from delta.tables import DeltaTable
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, lit
 
 # Initialize Spark session with Delta Lake support
 spark = spark_utils.create_spark_session()
@@ -39,8 +39,8 @@ end_date = "2024-05-29"
 new_data = collect_customer_data(start_date, end_date)
 
 new_df = spark.createDataFrame(new_data) \
-    .withColumn("effective_start_date", col("updated_at")) \
-    .withColumn("effective_end_date", col("updated_at"))
+    .withColumn("effective_start_date", lit(None)) \
+    .withColumn("effective_end_date", lit(None))
 
 # Cast the DataFrame to the desired schema
 new_df_casted = db_utils.cast_to_schema(new_df, schema)

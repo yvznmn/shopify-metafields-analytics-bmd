@@ -81,8 +81,8 @@ def collect_customer_data(start_date, end_date):
     return customers_dict
 
 # Example usage
-start_date = '2024-05-30'
-end_date = '2024-05-30'
+start_date = '2024-05-29'
+end_date = '2024-05-29'
 customer_data = collect_customer_data(start_date, end_date)
 print(json.dumps(customer_data, indent=4))
 

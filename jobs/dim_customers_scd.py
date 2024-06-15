@@ -81,7 +81,7 @@ updated_old_records = joined.filter(
         col("tgt.phone"),
         col("tgt.number_of_orders"),
         col("tgt.updated_at"),
-        to_date(col("tgt.updated_at"), "yyyy-MM-dd").alias("effective_start_date"),
+        col("tgt.effective_start_date"),
         to_date(lit(current_date_utc), "yyyy-MM-dd").alias("effective_end_date"),
         lit(False).alias("is_active")
     )
@@ -111,18 +111,18 @@ final_changes = updated_old_records.union(updated_new_records).union(new_records
 print("final changes")
 final_changes.show()
 
-# Perform the merge operation
-delta_table.alias("tgt").merge(
-    final_changes.alias("src"),
-    """tgt.customer_id = src.customer_id AND 
-    tgt.email = src.email AND 
-    tgt.first_name = src.first_name AND 
-    tgt.last_name = src.last_name AND 
-    tgt.phone = src.phone AND
-    tgt.number_of_orders = src.number_of_orders"""
-).whenMatchedUpdateAll() \
-.whenNotMatchedInsertAll() \
-.execute()
+# # Perform the merge operation
+# delta_table.alias("tgt").merge(
+#     final_changes.alias("src"),
+#     """tgt.customer_id = src.customer_id AND 
+#     tgt.email = src.email AND 
+#     tgt.first_name = src.first_name AND 
+#     tgt.last_name = src.last_name AND 
+#     tgt.phone = src.phone AND
+#     tgt.number_of_orders = src.number_of_orders"""
+# ).whenMatchedUpdateAll() \
+# .whenNotMatchedInsertAll() \
+# .execute()
 
 # Stop the Spark session
 spark.stop()

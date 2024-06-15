@@ -20,7 +20,7 @@ if DeltaTable.isDeltaTable(spark, delta_table_path):
 else:
     raise Exception("Delta Table does NOT exists!")
 
-start_date = "2024-06-10"
+start_date = "2024-01-01"
 end_date = "2024-06-18"
 new_data = collect_customer_data(start_date, end_date)
 
@@ -33,26 +33,15 @@ new_df = spark.createDataFrame(new_data) \
 new_df_casted = db_utils.cast_to_schema(new_df, schema)
 new_df_casted.printSchema()
 print("new_records")
-new_df_casted.show()
+new_df_casted.orderBy(col("updated_at").desc()).show()
 
 print("delta")
-delta_df = delta_table.toDF()
+delta_df = delta_table.toDF() \
+    .filter(col("is_active") == True)
 delta_df.show()
 
 joined = new_df_casted.alias("src") \
     .join(delta_df.alias("tgt"), col("tgt.customer_id") == col("src.customer_id"), "left")
-
-# Identify records that need to be updated
-changes = joined.filter(
-        (col("tgt.first_name") != col("src.first_name")) | \
-        (col("tgt.last_name") != col("src.last_name")) | \
-        (col("tgt.email") != col("src.email")) | \
-        (col("tgt.phone") != col("src.phone")) | \
-        (col("tgt.number_of_orders") != col("src.number_of_orders"))
-    ).select("src.*")
-
-print("changes")
-changes.show()
     
 updated_new_records = joined.filter(
         (col("tgt.customer_id") == col("src.customer_id")) & \

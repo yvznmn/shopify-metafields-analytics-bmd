@@ -39,6 +39,9 @@ print("delta")
 delta_df = delta_table.toDF()
 delta_df.show()
 
+joined = new_df_casted.alias("src") \
+    .join(delta_df.alias("tgt"), col("tgt.customer_id") == col("src.customer_id"), "left")
+
 # Identify records that need to be updated
 changes = joined.filter(
         (col("tgt.first_name") != col("src.first_name")) | \

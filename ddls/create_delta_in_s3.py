@@ -6,9 +6,10 @@ from utils import db_utils, spark_utils
 
 # Initialize Spark session with Delta Lake support
 spark = spark_utils.create_spark_session()
+table_name = "dim_customers_scd"
 
-schema = db_utils.get_metadata("dim_customers_scd")["schema"]
-delta_table_path = db_utils.get_metadata("dim_customers_scd")["delta_table_path"]
+schema = db_utils.get_metadata(table_name)["schema"]
+delta_table_path = db_utils.get_metadata(table_name)["delta_table_path"]
 
 # Create an empty DataFrame with the defined schema
 empty_df = spark.createDataFrame([], schema)

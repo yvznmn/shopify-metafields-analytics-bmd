@@ -20,8 +20,8 @@ if DeltaTable.isDeltaTable(spark, delta_table_path):
 else:
     raise Exception("Delta Table does NOT exists!")
 
-start_date = "2024-01-01"
-end_date = "2024-06-18"
+start_date = "2023-01-01"
+end_date = "2025-06-18"
 new_data = collect_customer_data(start_date, end_date)
 
 new_df = spark.createDataFrame(new_data) \
@@ -31,14 +31,14 @@ new_df = spark.createDataFrame(new_data) \
 
 # Cast the DataFrame to the desired schema
 new_df_casted = db_utils.cast_to_schema(new_df, schema)
-new_df_casted.printSchema()
-print("new_records")
-new_df_casted.orderBy(col("updated_at").desc()).show()
+# new_df_casted.printSchema()
+# print("new_records")
+# new_df_casted.orderBy(col("updated_at").desc()).show()
 
-print("delta")
+# print("delta")
 delta_df = delta_table.toDF() \
     .filter(col("is_active") == True)
-delta_df.show()
+# delta_df.show()
 
 joined = new_df_casted.alias("src") \
     .join(delta_df.alias("tgt"), col("tgt.customer_id") == col("src.customer_id"), "left")
@@ -63,8 +63,8 @@ updated_new_records = joined.filter(
         lit(True).alias("is_active")
     )
 
-print("updated_new_records")
-updated_new_records.show()
+# print("updated_new_records")
+# updated_new_records.show()
 
 updated_old_records = joined.filter(
         (col("tgt.customer_id") == col("src.customer_id")) & \
@@ -86,8 +86,8 @@ updated_old_records = joined.filter(
         lit(False).alias("is_active")
     )
 
-print("updated_old_records")
-updated_old_records.show()
+# print("updated_old_records")
+# updated_old_records.show()
 
 new_records = joined.filter(col("src.customer_id").isNotNull() & col("tgt.customer_id").isNull()) \
     .select(
@@ -103,26 +103,28 @@ new_records = joined.filter(col("src.customer_id").isNotNull() & col("tgt.custom
         lit(True).alias("is_active")
     )
 
-print("new_records")
-new_records.show()
+# print("new_records")
+# new_records.show()
 
 final_changes = updated_old_records.union(updated_new_records).union(new_records)
 
-print("final changes")
-final_changes.show()
+# print("final changes")
+# final_changes.show()
 
-# # Perform the merge operation
-# delta_table.alias("tgt").merge(
-#     final_changes.alias("src"),
-#     """tgt.customer_id = src.customer_id AND 
-#     tgt.email = src.email AND 
-#     tgt.first_name = src.first_name AND 
-#     tgt.last_name = src.last_name AND 
-#     tgt.phone = src.phone AND
-#     tgt.number_of_orders = src.number_of_orders"""
-# ).whenMatchedUpdateAll() \
-# .whenNotMatchedInsertAll() \
-# .execute()
+# Perform the merge operation
+delta_table.alias("tgt").merge(
+    final_changes.alias("src"),
+    """tgt.customer_id = src.customer_id AND 
+    tgt.email = src.email AND 
+    tgt.first_name = src.first_name AND 
+    tgt.last_name = src.last_name AND 
+    tgt.phone = src.phone AND
+    tgt.number_of_orders = src.number_of_orders"""
+).whenMatchedUpdateAll() \
+.whenNotMatchedInsertAll() \
+.execute()
+
+db_utils.run_glue_crawler("dimCustomersScdCrawler")
 
 # Stop the Spark session
 spark.stop()

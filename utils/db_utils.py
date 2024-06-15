@@ -59,6 +59,20 @@ def cast_to_schema(df, schema):
     print(f"Schema Casting is completed.")
     return df
 
+def run_glue_crawler(crawler_name):
+    # Initialize a session using Amazon Glue
+    client = boto3.client('glue', region_name='us-east-2')
+
+    try:
+        # Start the crawler
+        response = client.start_crawler(Name=crawler_name)
+        print(f"Crawler {crawler_name} started successfully.")
+        print(response)
+    except client.exceptions.CrawlerRunningException:
+        print(f"Crawler {crawler_name} is already running.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 def convert_schema_to_glue_format(schema):
     type_mapping = {
         'LongType': 'bigint',

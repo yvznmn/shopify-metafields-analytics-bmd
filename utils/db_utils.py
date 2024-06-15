@@ -2,6 +2,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType
 from pyspark.sql.functions import col
+from pyspark.sql.types import DecimalType, DateType, BooleanType, StructType, StructField, StringType, TimestampType, IntegerType, LongType
 import boto3
 
 def create_delta_table(spark_session: SparkSession, delta_table_path: str, table_name: str, schema: StructType):
@@ -113,3 +114,43 @@ def create_glue_delta_table(glue: boto3.session.Session.client, database_name: s
         TableInput=table_input
     )
     print("Glue table is ready.")
+
+
+def get_metadata(table_name):
+
+    dim_customers_scd = StructType([
+        StructField("customer_id", LongType(), True),
+        StructField("first_name", StringType(), True),
+        StructField("last_name", StringType(), True),
+        StructField("email", StringType(), True),
+        StructField("phone", StringType(), True),
+        StructField("number_of_orders", IntegerType(), True),
+        StructField("updated_at", TimestampType(), True),
+        StructField("effective_start_date", DateType(), True),
+        StructField("effective_end_date", DateType(), True),
+        StructField("is_active", BooleanType(), True),
+    ])
+
+    orders = StructType([
+        StructField("order_id", LongType(), True),
+        StructField("order_name", StringType(), True),
+        StructField("created_at", TimestampType(), True),
+        StructField("processed_at", TimestampType(), True),
+        StructField("updated_at", TimestampType(), True),
+        StructField("financial_status", TimestampType(), True),
+        StructField("customer_id", LongType(), True),
+        StructField("total_price", DecimalType(20, 4), True)
+    ])
+
+    metadata = {
+        "dim_customers_scd": {
+            "schema": dim_customers_scd,
+            "delta_table_path": "s3a://devbmdanalayticsdata/gold/dim_customers_scd"
+        },
+        "orders": {
+            "schema": orders,
+            "delta_table_path": "s3a://devbmdanalayticsdata/silver/orders"
+        },
+    }
+
+    return metadata[table_name]

@@ -3,7 +3,12 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType
 from pyspark.sql.functions import col
 from pyspark.sql.types import DecimalType, DateType, BooleanType, StructType, StructField, StringType, TimestampType, IntegerType, LongType
+from dotenv import load_dotenv
+import os
 import boto3
+
+# Load environment variables from .env file
+load_dotenv()
 
 def create_delta_table(spark_session: SparkSession, delta_table_path: str, table_name: str, schema: StructType):
     """
@@ -151,9 +156,35 @@ def get_metadata(table_name):
         StructField("created_at", TimestampType(), True),
         StructField("processed_at", TimestampType(), True),
         StructField("updated_at", TimestampType(), True),
-        StructField("financial_status", TimestampType(), True),
+        StructField("financial_status", StringType(), True),
         StructField("customer_id", LongType(), True),
-        StructField("total_price", DecimalType(20, 4), True)
+        StructField("total_price", DecimalType(20, 4), True),
+        StructField("draft_type", StringType(), True),
+        StructField("theme", StringType(), True),
+        StructField("flavor", StringType(), True),
+        StructField("allergies", StringType(), True),
+        StructField("pickup_date", TimestampType(), True)
+    ])
+
+    weekly_streamline_orders = StructType([
+        StructField("order_name", StringType(), True),
+        StructField("first_name", StringType(), True),
+        StructField("draft_type", StringType(), True),
+        StructField("theme", StringType(), True),
+        StructField("flavor", StringType(), True),
+        StructField("allergies", StringType(), True),
+        StructField("pickup_date", TimestampType(), True)
+    ])
+
+    future_orders = StructType([
+        StructField("order_name", StringType(), True),
+        StructField("first_name", StringType(), True),
+        StructField("financial_status", StringType(), True),
+        StructField("draft_type", StringType(), True),
+        StructField("theme", StringType(), True),
+        StructField("flavor", StringType(), True),
+        StructField("allergies", StringType(), True),
+        StructField("pickup_date", TimestampType(), True)
     ])
 
     metadata = {
@@ -165,6 +196,35 @@ def get_metadata(table_name):
             "schema": orders,
             "delta_table_path": "s3a://devbmdanalayticsdata/silver/orders"
         },
+        "weekly_streamline_orders": {
+            "schema": weekly_streamline_orders,
+            "delta_table_path": "s3a://devbmdanalayticsdata/gold/weekly_streamline_orders"
+        },
+        "future_orders": {
+            "schema": future_orders,
+            "delta_table_path": "s3a://devbmdanalayticsdata/gold/future_orders"
+        }
     }
 
     return metadata[table_name]
+
+def read_delta_table_by_path(spark, path):
+
+    return spark.read.format("delta").load(path)
+
+def run_query_from_redshift(spark, query):
+
+    # AWS Redshift JDBC URL and credentials
+    redshift_jdbc_url = os.getenv('REDSHIFT_CONN_STRING')
+    redshift_user = os.getenv('REDSHIFT_USER_NAME')
+    redshift_password = os.getenv('REDSHIFT_PWD')
+
+    # Read the data from Redshift Spectrum using the query
+    return spark.read \
+        .format("jdbc") \
+        .option("url", redshift_jdbc_url) \
+        .option("query", query) \
+        .option("user", redshift_user) \
+        .option("password", redshift_password) \
+        .option("driver", "com.amazon.redshift.jdbc42.Driver") \
+        .load()

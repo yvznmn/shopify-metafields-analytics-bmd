@@ -14,13 +14,13 @@ def random_datetime(start, end):
     random_seconds = random.randint(0, int(delta.total_seconds()))
     return start + datetime.timedelta(seconds=random_seconds)
 
-def random_datetime_in_five_years():
+def random_datetime_n_years_back(n):
 
     # Define the current datetime with timezone
     end_datetime = datetime.datetime.now(pytz.timezone('America/Chicago')) - datetime.timedelta(7)
 
     # Define the start datetime as 5 years before the current datetime
-    start_datetime = end_datetime - datetime.timedelta(days=1*365)
+    start_datetime = end_datetime - datetime.timedelta(days=n*365)
 
     # Generate a random datetime between start_datetime and end_datetime
     random_generated_datetime = random_datetime(start_datetime, end_datetime)
@@ -102,7 +102,7 @@ def create_single_customer():
         "city":"Austin",
         "province":"TX",
         "phone":phone,
-        "zip":"12345",
+        "zip":str(random.randint(10000, 99999)),
         "last_name":l_name,
         "first_name":f_name,
         "country":"USA"
@@ -117,10 +117,10 @@ def create_single_customer():
         "addresses": addresses
     }}
 
-    print(customer_data)
+    # print(customer_data)
 
     response = requests.post(url, headers=header, json=customer_data)
-    print(response.json())
+    # print(response.json())
     if response.status_code == 201:
         print(f"Customer {f_name} {l_name} created.")
     else:
@@ -188,8 +188,8 @@ def create_metafields_for_order(
     url = api_utils.get_api_url(final_endpoint_customers)
     header = api_utils.get_header()
 
-    flavor = ["chocolate", "vanilla", "red velvet"]
-    theme = ["star wars", "barbie", "lord of the rings"]
+    flavor = ["strawberry", "black forest", "carrot"]
+    theme = ["graduation", "baby shower", "cars"]
     allergies = ["n/a","dairy","peanut"]
 
     metafields_data = [
@@ -291,11 +291,11 @@ def create_order_by_customer(
 
     return order_id
 
-def create_paid_orders_for_random_customers(count):
+def create_orders_for_random_customers(financial_status, count, years_back):
 
     customer_ids = sorted(get_customer_ids())
     random_elements = [random.choice(customer_ids) for _ in range(count)]
-    created_at_datetimes = random_datetime_in_five_years()
+    created_at_datetimes = random_datetime_n_years_back(years_back)
 
     for i in random_elements:
 
@@ -305,7 +305,7 @@ def create_paid_orders_for_random_customers(count):
 
         deposit_order_id = create_order_by_customer(
             customer_id = i,
-            financial_status = "paid",
+            financial_status = financial_status,
             order_type = "deposit",
             created_at=created_at_datetimes["deposit_created_at"]
         )
@@ -321,7 +321,7 @@ def create_paid_orders_for_random_customers(count):
 
         remaining_order_id = create_order_by_customer(
             customer_id = i,
-            financial_status = "paid",
+            financial_status = financial_status,
             order_type = "remaining",
             created_at=created_at_datetimes["remaining_created_at"]
         )
@@ -359,9 +359,9 @@ def delete_all_orders():
 
 # delete_all_orders()    
 
-# create_many_customers(10)
+# create_many_customers(30)
 # create_single_customer()
-# create_paid_orders_for_random_customers(1000)
+create_orders_for_random_customers("paid", 200, 3)
 
 # create_metafields_for_order(
 #     5551028961418,

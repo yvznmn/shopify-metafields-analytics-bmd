@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Jun 16 18:41:55 CDT 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0190-236d-c665-00000ba0d2c8 
+on database directory /Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@65d9b345 
+Loaded from file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=AdoptOpenJDK
+java.runtime.version=1.8.0_292-b10
+user.dir=/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.16
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

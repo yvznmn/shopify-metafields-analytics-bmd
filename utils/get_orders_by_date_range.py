@@ -30,6 +30,17 @@ def fetch_orders(start_date, end_date, cursor=None):
                 currencyCode
               }}
             }}
+            metafields(first: 10) {{
+              edges {{
+                node {{
+                  id
+                  namespace
+                  key
+                  value
+                  type
+                }}
+              }}
+            }}
           }}
         }}
       }}
@@ -92,4 +103,50 @@ def collect_order_data(start_date, end_date):
 
     return orders_dict
 
+# Function to collect order data with metafields into a dictionary based on date range
+def collect_order_data_with_metafields(start_date, end_date):
+    all_orders = []
+    cursor = None
 
+    while True:
+        result = fetch_orders(start_date, end_date, cursor)
+        
+        if 'data' not in result or 'orders' not in result['data']:
+            print("Unexpected response format:", json.dumps(result, indent=4))
+            raise Exception("Unexpected response format.")
+        
+        orders = result['data']['orders']['edges']
+        all_orders.extend(orders)
+        
+        page_info = result['data']['orders']['pageInfo']
+        if not page_info['hasNextPage']:
+            break
+        
+        cursor = page_info['endCursor']
+
+    orders_dict = []
+    for order in all_orders:
+        order_data = order['node']
+        order_id = order_data['id'].split("/")[-1]
+        customer_id = order_data['customer']['id'].split("/")[-1]
+        total_price = f"{order_data['totalPriceSet']['shopMoney']['amount']}"
+        order_info = {
+            "order_id": order_id,
+            "order_name": order_data['name'],
+            "created_at": order_data['createdAt'],
+            "processed_at": order_data['processedAt'],
+            "updated_at": order_data['updatedAt'],
+            "financial_status": order_data['displayFinancialStatus'],
+            "customer_id": customer_id,
+            "total_price": total_price,
+            **{metafield['node']['key']: metafield['node']['value'] for metafield in order_data['metafields']['edges']}
+        }
+        orders_dict.append(order_info)
+
+    return orders_dict
+
+# # Example usage
+# start_date = '2023-06-14'
+# end_date = '2025-06-17'
+# order_data = collect_order_data_with_metafields(start_date, end_date)
+# print(json.dumps(order_data, indent=4))

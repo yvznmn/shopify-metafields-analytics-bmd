@@ -18,7 +18,8 @@ def create_spark_session():
         .config("spark.jars.packages", 
                 "io.delta:delta-core_2.12:1.2.1,"
                 "org.apache.hadoop:hadoop-aws:3.2.2,"
-                "com.amazonaws:aws-java-sdk-bundle:1.11.563") \
+                "com.amazonaws:aws-java-sdk-bundle:1.11.563,"
+                "com.amazon.redshift:redshift-jdbc42:2.1.0.29") \
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
         .config("spark.hadoop.fs.s3a.aws.credentials.provider", 

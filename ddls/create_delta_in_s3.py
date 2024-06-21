@@ -6,7 +6,7 @@ from utils import db_utils, spark_utils
 
 # Initialize Spark session with Delta Lake support
 spark = spark_utils.create_spark_session()
-table_name = "dim_customers_scd"
+table_name = "future_orders"
 
 schema = db_utils.get_metadata(table_name)["schema"]
 delta_table_path = db_utils.get_metadata(table_name)["delta_table_path"]

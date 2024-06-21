@@ -24,3 +24,8 @@ def utc_to_local(utc_time_str):
     local_time = utc_time.astimezone(local_tz)
     return local_time.strftime("%Y-%m-%dT%H:%M:%SZ")
 
+def get_current_local_date():
+    chicago_time = datetime.now(pytz.timezone(local_tz_str))
+    formatted_date = chicago_time.strftime('%Y-%m-%d')
+    return formatted_date
+

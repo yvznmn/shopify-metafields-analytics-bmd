@@ -21,6 +21,10 @@ def dim_customers_scd_etl_job(spark: SparkSession, start_date:str, end_date:str)
 
     new_data = get_customers_by_date_range.collect_customer_data(start_date, end_date)
 
+    if new_data == []:
+        print("There is no change, hence df is empty. Nothing to write!")
+        return
+
     new_df = spark.createDataFrame(new_data) \
         .withColumn("effective_start_date", lit(None)) \
         .withColumn("effective_end_date", lit(None)) \

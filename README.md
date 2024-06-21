@@ -50,7 +50,7 @@ Redshift
 CREATE SCHEMA IF NOT EXISTS <schema_name>;
 
 export AIRFLOW_HOME=<airflow_home>
-airflowdb init
+airflow db init
 airflow users create \
    --username admin \
    --firstname FIRST_NAME \
@@ -64,6 +64,8 @@ pkill -f "airflow scheduler"
 pkill -f "airflow webserver"
 # Start the scheduler again
 nohup airflow scheduler &
+
+ps aux | grep airflow
 
 **CONCEPTUAL MODELING**
 

@@ -1,0 +1,506 @@
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[[34m2024-06-21T16:12:34.407-0500[0m] {[34mtask_context_logger.py:[0m63} INFO[0m - Task context logging is enabled[0m
+[[34m2024-06-21T16:12:34.414-0500[0m] {[34mexecutor_loader.py:[0m235} INFO[0m - Loaded executor: SequentialExecutor[0m
+[[34m2024-06-21T16:12:34.545-0500[0m] {[34mscheduler_job_runner.py:[0m796} INFO[0m - Starting the scheduler[0m
+[[34m2024-06-21T16:12:34.546-0500[0m] {[34mscheduler_job_runner.py:[0m803} INFO[0m - Processing each file at most -1 times[0m
+[[34m2024-06-21T16:12:34.557-0500[0m] {[34mmanager.py:[0m170} INFO[0m - Launched DagFileProcessorManager with pid: 3956[0m
+[[34m2024-06-21T16:12:34.561-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[2024-06-21 16:12:36 -0500] [3955] [INFO] Starting gunicorn 22.0.0
+[2024-06-21 16:12:36 -0500] [3955] [INFO] Listening at: http://[::]:8793 (3955)
+[2024-06-21 16:12:36 -0500] [3955] [INFO] Using worker: sync
+[2024-06-21 16:12:36 -0500] [3957] [INFO] Booting worker with pid: 3957
+[2024-06-21 16:12:36 -0500] [3958] [INFO] Booting worker with pid: 3958
+[[34m2024-06-21T16:12:36.967-0500[0m] {[34msettings.py:[0m60} INFO[0m - Configured default timezone UTC[0m
+[2024-06-21T16:12:37.005-0500] {manager.py:393} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-4604c980-68f8-4f8d-b6ea-c47636086a90;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 1168ms :: artifacts dl 83ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-4604c980-68f8-4f8d-b6ea-c47636086a90
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/19ms)
+24/06/21 16:12:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/21 16:13:06 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+Process DagFileProcessor0-Process:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 152, in __init__
+    self.collect_dags(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 559, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 318, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 381, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py", line 6, in <module>
+    from jobs.orders_etl_job import orders_etl_job
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 48, in <module>
+    orders_etl_job(spark, curr_date, curr_date)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 14, in orders_etl_job
+    if DeltaTable.isDeltaTable(spark, delta_table_path):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/delta/tables.py", line 521, in isDeltaTable
+    return jvm.io.delta.tables.DeltaTable.isDeltaTable(jsparkSession, identifier)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1308, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#reducing-dag-complexity, PID: 3959
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-dffa695e-e470-4594-a9de-3201e4d71a7a;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 532ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-dffa695e-e470-4594-a9de-3201e4d71a7a
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 16:13:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/21 16:14:05 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+Process DagFileProcessor2-Process:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 152, in __init__
+    self.collect_dags(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 559, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 318, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 381, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py", line 6, in <module>
+    from jobs.orders_etl_job import orders_etl_job
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 48, in <module>
+    orders_etl_job(spark, curr_date, curr_date)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 14, in orders_etl_job
+    if DeltaTable.isDeltaTable(spark, delta_table_path):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/delta/tables.py", line 521, in isDeltaTable
+    return jvm.io.delta.tables.DeltaTable.isDeltaTable(jsparkSession, identifier)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1308, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#reducing-dag-complexity, PID: 4040
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-70f45811-1d39-4282-9562-e190dc3fe3d3;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 404ms :: artifacts dl 21ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-70f45811-1d39-4282-9562-e190dc3fe3d3
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 16:14:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/21 16:15:10 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+Process DagFileProcessor4-Process:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 152, in __init__
+    self.collect_dags(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 559, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 318, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 381, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py", line 6, in <module>
+    from jobs.orders_etl_job import orders_etl_job
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 48, in <module>
+    orders_etl_job(spark, curr_date, curr_date)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 14, in orders_etl_job
+    if DeltaTable.isDeltaTable(spark, delta_table_path):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/delta/tables.py", line 521, in isDeltaTable
+    return jvm.io.delta.tables.DeltaTable.isDeltaTable(jsparkSession, identifier)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1308, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#reducing-dag-complexity, PID: 4087
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-facaff70-c5d0-4a95-a564-d39212831e40;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 673ms :: artifacts dl 30ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-facaff70-c5d0-4a95-a564-d39212831e40
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/14ms)
+24/06/21 16:16:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/21 16:16:14 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+Process DagFileProcessor6-Process:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 152, in __init__
+    self.collect_dags(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 559, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 318, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 381, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py", line 6, in <module>
+    from jobs.orders_etl_job import orders_etl_job
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 48, in <module>
+    orders_etl_job(spark, curr_date, curr_date)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/jobs/orders_etl_job.py", line 14, in orders_etl_job
+    if DeltaTable.isDeltaTable(spark, delta_table_path):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/delta/tables.py", line 521, in isDeltaTable
+    return jvm.io.delta.tables.DeltaTable.isDeltaTable(jsparkSession, identifier)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1308, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.9.2/best-practices.html#reducing-dag-complexity, PID: 4160
+[[34m2024-06-21T16:16:26.078-0500[0m] {[34mscheduler_job_runner.py:[0m256} INFO[0m - Exiting gracefully upon receiving signal 15[0m
+[[34m2024-06-21T16:16:26.593-0500[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending Signals.SIGTERM to group 3956. PIDs of all processes in the group: [][0m
+[[34m2024-06-21T16:16:26.594-0500[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal Signals.SIGTERM to group 3956[0m
+[[34m2024-06-21T16:16:26.594-0500[0m] {[34mprocess_utils.py:[0m101} INFO[0m - Sending the signal Signals.SIGTERM to process 3956 as process group is missing.[0m
+[[34m2024-06-21T16:16:26.604-0500[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending Signals.SIGTERM to group 3956. PIDs of all processes in the group: [][0m
+[[34m2024-06-21T16:16:26.604-0500[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal Signals.SIGTERM to group 3956[0m
+[[34m2024-06-21T16:16:26.605-0500[0m] {[34mprocess_utils.py:[0m101} INFO[0m - Sending the signal Signals.SIGTERM to process 3956 as process group is missing.[0m
+[[34m2024-06-21T16:16:26.605-0500[0m] {[34mscheduler_job_runner.py:[0m872} INFO[0m - Exited execute loop[0m
+[2024-06-21 16:16:26 -0500] [3955] [INFO] Handling signal: term
+[2024-06-21 16:16:26 -0500] [3957] [INFO] Worker exiting (pid: 3957)
+[2024-06-21 16:16:26 -0500] [3958] [INFO] Worker exiting (pid: 3958)
+[2024-06-21 16:16:27 -0500] [3955] [INFO] Shutting down: Master
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+Access Logformat: 
+=================================================================
+[[34m2024-06-21T16:24:08.665-0500[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /dev/null[0m
+/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/flask_limiter/extension.py:333 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[[34m2024-06-21T16:24:25.667-0500[0m] {[34mtask_context_logger.py:[0m63} INFO[0m - Task context logging is enabled[0m
+[[34m2024-06-21T16:24:25.674-0500[0m] {[34mexecutor_loader.py:[0m235} INFO[0m - Loaded executor: SequentialExecutor[0m
+[[34m2024-06-21T16:24:25.785-0500[0m] {[34mscheduler_job_runner.py:[0m796} INFO[0m - Starting the scheduler[0m
+[[34m2024-06-21T16:24:25.786-0500[0m] {[34mscheduler_job_runner.py:[0m803} INFO[0m - Processing each file at most -1 times[0m
+[[34m2024-06-21T16:24:25.793-0500[0m] {[34mmanager.py:[0m170} INFO[0m - Launched DagFileProcessorManager with pid: 4563[0m
+[[34m2024-06-21T16:24:25.802-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[2024-06-21 16:24:28 -0500] [4562] [INFO] Starting gunicorn 22.0.0
+[2024-06-21 16:24:28 -0500] [4562] [INFO] Listening at: http://[::]:8793 (4562)
+[2024-06-21 16:24:28 -0500] [4562] [INFO] Using worker: sync
+[2024-06-21 16:24:28 -0500] [4564] [INFO] Booting worker with pid: 4564
+[2024-06-21 16:24:28 -0500] [4565] [INFO] Booting worker with pid: 4565
+[[34m2024-06-21T16:24:28.346-0500[0m] {[34msettings.py:[0m60} INFO[0m - Configured default timezone UTC[0m
+[2024-06-21T16:24:28.375-0500] {manager.py:393} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-93281e2f-0267-4de9-ae80-14fe469e983c;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 404ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-93281e2f-0267-4de9-ae80-14fe469e983c
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 16:24:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-21T16:25:13.244-0500[0m] {[34mscheduler_job_runner.py:[0m417} INFO[0m - 1 tasks up for execution:
+	<TaskInstance: weekly_future_orders_dag.task_curr_orders_etl_job manual__2024-06-21T21:25:11.241735+00:00 [scheduled]>[0m
+[[34m2024-06-21T16:25:13.244-0500[0m] {[34mscheduler_job_runner.py:[0m480} INFO[0m - DAG weekly_future_orders_dag has 0/16 running and queued tasks[0m
+[[34m2024-06-21T16:25:13.244-0500[0m] {[34mscheduler_job_runner.py:[0m596} INFO[0m - Setting the following tasks to queued state:
+	<TaskInstance: weekly_future_orders_dag.task_curr_orders_etl_job manual__2024-06-21T21:25:11.241735+00:00 [scheduled]>[0m
+[[34m2024-06-21T16:25:13.249-0500[0m] {[34mscheduler_job_runner.py:[0m639} INFO[0m - Sending TaskInstanceKey(dag_id='weekly_future_orders_dag', task_id='task_curr_orders_etl_job', run_id='manual__2024-06-21T21:25:11.241735+00:00', try_number=1, map_index=-1) to executor with priority 2 and queue default[0m
+[[34m2024-06-21T16:25:13.250-0500[0m] {[34mbase_executor.py:[0m149} INFO[0m - Adding to queue: ['airflow', 'tasks', 'run', 'weekly_future_orders_dag', 'task_curr_orders_etl_job', 'manual__2024-06-21T21:25:11.241735+00:00', '--local', '--subdir', 'DAGS_FOLDER/weekly_future_orders_dag.py'][0m
+[[34m2024-06-21T16:25:13.253-0500[0m] {[34msequential_executor.py:[0m74} INFO[0m - Executing command: ['airflow', 'tasks', 'run', 'weekly_future_orders_dag', 'task_curr_orders_etl_job', 'manual__2024-06-21T21:25:11.241735+00:00', '--local', '--subdir', 'DAGS_FOLDER/weekly_future_orders_dag.py'][0m
+[[34m2024-06-21T16:25:15.573-0500[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/airflow/dags/weekly_future_orders_dag.py[0m
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-131d70cb-a2e1-4e83-abde-986dd1f2c4a0;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 451ms :: artifacts dl 20ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-131d70cb-a2e1-4e83-abde-986dd1f2c4a0
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/13ms)
+24/06/21 16:25:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-21T16:25:44.881-0500[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: weekly_future_orders_dag.task_curr_orders_etl_job manual__2024-06-21T21:25:11.241735+00:00 [queued]> on host Yavuzs-MacBook-Air.local[0m
+24/06/21 16:25:47 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[Stage 0:>                                                          (0 + 3) / 3][Stage 2:>                                                         (0 + 4) / 50][Stage 2:====>                                                     (4 + 4) / 50][Stage 2:=====>                                                    (5 + 4) / 50][Stage 2:=========>                                                (8 + 4) / 50][Stage 2:===========>                                             (10 + 4) / 50][Stage 2:==============>                                          (13 + 4) / 50][Stage 2:=================>                                       (15 + 4) / 50][Stage 2:======================>                                  (20 + 4) / 50][Stage 2:=========================>                               (22 + 4) / 50][Stage 2:===============================>                         (28 + 4) / 50][Stage 2:====================================>                    (32 + 4) / 50][Stage 2:=========================================>               (36 + 5) / 50][Stage 2:===============================================>         (42 + 4) / 50][Stage 2:=====================================================>   (47 + 3) / 50]                                                                                

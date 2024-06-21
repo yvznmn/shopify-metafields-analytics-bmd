@@ -42,7 +42,3 @@ def orders_etl_job(spark: SparkSession, start_date: str, end_date:str):
 
     db_utils.run_glue_crawler("ordersCrawler")
     print("Crawler run is completed")
-
-curr_date = datetime_utils.get_current_local_date()
-spark = spark_utils.create_spark_session()
-orders_etl_job(spark, curr_date, curr_date)

@@ -503,4 +503,1416 @@ Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 [[34m2024-06-21T16:25:44.881-0500[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: weekly_future_orders_dag.task_curr_orders_etl_job manual__2024-06-21T21:25:11.241735+00:00 [queued]> on host Yavuzs-MacBook-Air.local[0m
 24/06/21 16:25:47 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
-[Stage 0:>                                                          (0 + 3) / 3][Stage 2:>                                                         (0 + 4) / 50][Stage 2:====>                                                     (4 + 4) / 50][Stage 2:=====>                                                    (5 + 4) / 50][Stage 2:=========>                                                (8 + 4) / 50][Stage 2:===========>                                             (10 + 4) / 50][Stage 2:==============>                                          (13 + 4) / 50][Stage 2:=================>                                       (15 + 4) / 50][Stage 2:======================>                                  (20 + 4) / 50][Stage 2:=========================>                               (22 + 4) / 50][Stage 2:===============================>                         (28 + 4) / 50][Stage 2:====================================>                    (32 + 4) / 50][Stage 2:=========================================>               (36 + 5) / 50][Stage 2:===============================================>         (42 + 4) / 50][Stage 2:=====================================================>   (47 + 3) / 50]                                                                                
+[Stage 0:>                                                          (0 + 3) / 3][Stage 2:>                                                         (0 + 4) / 50][Stage 2:====>                                                     (4 + 4) / 50][Stage 2:=====>                                                    (5 + 4) / 50][Stage 2:=========>                                                (8 + 4) / 50][Stage 2:===========>                                             (10 + 4) / 50][Stage 2:==============>                                          (13 + 4) / 50][Stage 2:=================>                                       (15 + 4) / 50][Stage 2:======================>                                  (20 + 4) / 50][Stage 2:=========================>                               (22 + 4) / 50][Stage 2:===============================>                         (28 + 4) / 50][Stage 2:====================================>                    (32 + 4) / 50][Stage 2:=========================================>               (36 + 5) / 50][Stage 2:===============================================>         (42 + 4) / 50][Stage 2:=====================================================>   (47 + 3) / 50]                                                                                [[34m2024-06-21T22:14:39.926-0500[0m] {[34mscheduler_job_runner.py:[0m689} INFO[0m - Received executor event with state success for task instance TaskInstanceKey(dag_id='weekly_future_orders_dag', task_id='task_curr_orders_etl_job', run_id='manual__2024-06-21T21:25:11.241735+00:00', try_number=1, map_index=-1)[0m
+[[34m2024-06-21T22:14:39.970-0500[0m] {[34mscheduler_job_runner.py:[0m721} INFO[0m - TaskInstance Finished: dag_id=weekly_future_orders_dag, task_id=task_curr_orders_etl_job, run_id=manual__2024-06-21T21:25:11.241735+00:00, map_index=-1, run_start_date=2024-06-21 21:25:47.338933+00:00, run_end_date=2024-06-22 03:13:30.284871+00:00, run_duration=20862.945938, state=failed, executor_state=success, try_number=1, max_tries=0, job_id=13, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2024-06-21 21:25:13.245602+00:00, queued_by_job_id=12, pid=4651[0m
+[[34m2024-06-21T22:14:39.983-0500[0m] {[34mmanager.py:[0m285} ERROR[0m - DagFileProcessorManager (PID=4563) last sent a heartbeat 3050.26 seconds ago! Restarting it[0m
+[[34m2024-06-21T22:14:39.994-0500[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending Signals.SIGTERM to group 4563. PIDs of all processes in the group: [4563][0m
+[[34m2024-06-21T22:14:39.995-0500[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal Signals.SIGTERM to group 4563[0m
+[[34m2024-06-21T22:14:40.709-0500[0m] {[34mprocess_utils.py:[0m80} INFO[0m - Process psutil.Process(pid=4563, status='terminated', exitcode=0, started='16:24:25') (4563) terminated with exit code 0[0m
+[[34m2024-06-21T22:14:40.720-0500[0m] {[34mmanager.py:[0m170} INFO[0m - Launched DagFileProcessorManager with pid: 5570[0m
+[[34m2024-06-21T22:14:40.776-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2024-06-21T22:14:46.341-0500[0m] {[34msettings.py:[0m60} INFO[0m - Configured default timezone UTC[0m
+[2024-06-21T22:14:46.376-0500] {manager.py:393} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-9f186d74-1d58-4238-85a6-ea90668ac11f;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 485ms :: artifacts dl 19ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-9f186d74-1d58-4238-85a6-ea90668ac11f
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/15ms)
+24/06/21 22:14:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-1a85ac91-e18c-4020-9095-e9df20ef1a60;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 423ms :: artifacts dl 26ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-1a85ac91-e18c-4020-9095-e9df20ef1a60
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/13ms)
+24/06/21 22:15:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-2d9c1cf3-2f07-45c7-bc34-5fd9751de03d;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 389ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-2d9c1cf3-2f07-45c7-bc34-5fd9751de03d
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 22:16:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-cc14205d-ef4e-4a48-8b2e-037c8eefc3b9;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 435ms :: artifacts dl 24ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-cc14205d-ef4e-4a48-8b2e-037c8eefc3b9
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/23ms)
+24/06/21 22:16:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-1d0a4950-182d-4f76-bb50-daf20ae36fa4;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 494ms :: artifacts dl 24ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-1d0a4950-182d-4f76-bb50-daf20ae36fa4
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/13ms)
+24/06/21 22:17:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-2782fa47-eb86-4d7d-9fcd-d6ca2c3b7628;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 384ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-2782fa47-eb86-4d7d-9fcd-d6ca2c3b7628
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/11ms)
+24/06/21 22:18:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-85c585f6-f243-456d-a9a5-d50d5a250ff8;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 763ms :: artifacts dl 41ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-85c585f6-f243-456d-a9a5-d50d5a250ff8
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/15ms)
+24/06/21 22:19:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-21T22:19:40.838-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-0bafa57c-7ad3-41e9-8ec0-bea9ee20ceff;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 423ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-0bafa57c-7ad3-41e9-8ec0-bea9ee20ceff
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 22:19:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-3871ba22-d104-4ed3-8274-8765fda39200;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 412ms :: artifacts dl 21ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-3871ba22-d104-4ed3-8274-8765fda39200
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/10ms)
+24/06/21 22:20:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-48a0950f-02e7-4098-a94e-84fd966a81da;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 408ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-48a0950f-02e7-4098-a94e-84fd966a81da
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 22:21:23 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-0db874d5-8c2c-43e8-a0da-f66c2011575a;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 390ms :: artifacts dl 21ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-0db874d5-8c2c-43e8-a0da-f66c2011575a
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 22:22:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-ac18ef4f-880d-4fd6-af6a-3add6b853ce0;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 452ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-ac18ef4f-880d-4fd6-af6a-3add6b853ce0
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/21 22:22:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-2f241e17-7313-4c92-8b5c-8348a07ad4e6;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 494ms :: artifacts dl 23ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-2f241e17-7313-4c92-8b5c-8348a07ad4e6
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/15ms)
+24/06/21 22:23:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-7445904a-8404-4117-a79d-ffc4999dc417;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 654ms :: artifacts dl 36ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-7445904a-8404-4117-a79d-ffc4999dc417
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/20ms)
+24/06/21 22:24:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-21T22:24:40.919-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-8ec48270-8e20-4fe6-a261-b2a459ec7b20;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 1060ms :: artifacts dl 83ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-8ec48270-8e20-4fe6-a261-b2a459ec7b20
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/23ms)
+24/06/21 22:25:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-3de695dd-a9f7-407e-9f95-e7f30093b9dc;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 762ms :: artifacts dl 31ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-3de695dd-a9f7-407e-9f95-e7f30093b9dc
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/34ms)
+24/06/21 22:26:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-a994fe56-7af8-42bc-8d18-166034492104;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 886ms :: artifacts dl 21ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-a994fe56-7af8-42bc-8d18-166034492104
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/88ms)
+24/06/21 22:26:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-76a848ec-26e8-411b-86ee-cd3d9374775e;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 830ms :: artifacts dl 28ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-76a848ec-26e8-411b-86ee-cd3d9374775e
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/23ms)
+24/06/21 22:27:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-e2994b5d-e22f-4dc3-8f4e-8d84dc733564;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 805ms :: artifacts dl 70ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-e2994b5d-e22f-4dc3-8f4e-8d84dc733564
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/14ms)
+24/06/21 22:28:36 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-77e8aa19-28ad-47b2-89cc-3f9ae0fd4fe5;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 888ms :: artifacts dl 88ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-77e8aa19-28ad-47b2-89cc-3f9ae0fd4fe5
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/15ms)
+24/06/21 22:29:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-21T22:29:47.152-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-88a0e005-f09a-4aab-87a5-e4b1a745fb00;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 1410ms :: artifacts dl 63ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-88a0e005-f09a-4aab-87a5-e4b1a745fb00
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/103ms)
+24/06/21 22:30:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-6d1c6116-43c6-4a2e-816f-3137f1d17aac;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 720ms :: artifacts dl 48ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-6d1c6116-43c6-4a2e-816f-3137f1d17aac
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/21ms)
+24/06/21 22:30:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-28fa69d8-6f59-4d18-91c8-c44ed97a9a03;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 803ms :: artifacts dl 49ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-28fa69d8-6f59-4d18-91c8-c44ed97a9a03
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/22ms)
+24/06/21 22:31:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-21T22:32:21.777-0500[0m] {[34mscheduler_job_runner.py:[0m256} INFO[0m - Exiting gracefully upon receiving signal 15[0m
+[[34m2024-06-21T22:32:22.791-0500[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending Signals.SIGTERM to group 5570. PIDs of all processes in the group: [5570][0m
+[[34m2024-06-21T22:32:22.791-0500[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal Signals.SIGTERM to group 5570[0m
+[[34m2024-06-21T22:32:23.657-0500[0m] {[34mprocess_utils.py:[0m80} INFO[0m - Process psutil.Process(pid=5570, status='terminated', exitcode=0, started='22:14:40') (5570) terminated with exit code 0[0m
+[[34m2024-06-21T22:32:23.670-0500[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending Signals.SIGTERM to group 5570. PIDs of all processes in the group: [][0m
+[[34m2024-06-21T22:32:23.671-0500[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal Signals.SIGTERM to group 5570[0m
+[[34m2024-06-21T22:32:23.671-0500[0m] {[34mprocess_utils.py:[0m101} INFO[0m - Sending the signal Signals.SIGTERM to process 5570 as process group is missing.[0m
+[[34m2024-06-21T22:32:23.671-0500[0m] {[34mscheduler_job_runner.py:[0m872} INFO[0m - Exited execute loop[0m
+[2024-06-21 22:32:23 -0500] [4562] [INFO] Handling signal: term
+[2024-06-21 22:32:23 -0500] [4565] [INFO] Worker exiting (pid: 4565)
+[2024-06-21 22:32:23 -0500] [4564] [INFO] Worker exiting (pid: 4564)
+[2024-06-21 22:32:24 -0500] [4562] [INFO] Shutting down: Master
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+Access Logformat: 
+=================================================================
+[[34m2024-06-21T23:07:07.697-0500[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /dev/null[0m
+/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/flask_limiter/extension.py:333 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+Traceback (most recent call last):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/__main__.py", line 58, in main
+    args.func(args)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/cli/commands/webserver_command.py", line 480, in webserver
+    create_app(None)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/app.py", line 164, in create_app
+    init_appbuilder(flask_app)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 676, in init_appbuilder
+    return AirflowAppBuilder(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 184, in __init__
+    self.init_app(app, session)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 240, in init_app
+    self._swap_url_filter()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 252, in _swap_url_filter
+    from airflow.www.views import get_safe_url
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/views.py", line 680, in <module>
+    class AirflowBaseView(BaseView):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/views.py", line 694, in AirflowBaseView
+    executor, _ = ExecutorLoader.import_default_executor_cls()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 291, in import_default_executor_cls
+    executor, source = cls.import_executor_cls(executor_name, validate=validate)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 279, in import_executor_cls
+    return _import_and_validate(executor_name.module_path), executor_name.connector_source
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 265, in _import_and_validate
+    cls.validate_database_executor_compatibility(executor)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 319, in validate_database_executor_compatibility
+    raise AirflowConfigException(f"error: cannot use SQLite with the {executor.__name__}")
+airflow.exceptions.AirflowConfigException: error: cannot use SQLite with the LocalExecutor
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+Access Logformat: 
+=================================================================
+[[34m2024-06-21T23:09:32.617-0500[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /dev/null[0m
+/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/flask_limiter/extension.py:333 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+Traceback (most recent call last):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/__main__.py", line 58, in main
+    args.func(args)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/cli/commands/webserver_command.py", line 480, in webserver
+    create_app(None)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/app.py", line 164, in create_app
+    init_appbuilder(flask_app)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 676, in init_appbuilder
+    return AirflowAppBuilder(
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 184, in __init__
+    self.init_app(app, session)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 240, in init_app
+    self._swap_url_filter()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/extensions/init_appbuilder.py", line 252, in _swap_url_filter
+    from airflow.www.views import get_safe_url
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/views.py", line 680, in <module>
+    class AirflowBaseView(BaseView):
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/www/views.py", line 694, in AirflowBaseView
+    executor, _ = ExecutorLoader.import_default_executor_cls()
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 291, in import_default_executor_cls
+    executor, source = cls.import_executor_cls(executor_name, validate=validate)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 279, in import_executor_cls
+    return _import_and_validate(executor_name.module_path), executor_name.connector_source
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 265, in _import_and_validate
+    cls.validate_database_executor_compatibility(executor)
+  File "/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/airflow/executors/executor_loader.py", line 319, in validate_database_executor_compatibility
+    raise AirflowConfigException(f"error: cannot use SQLite with the {executor.__name__}")
+airflow.exceptions.AirflowConfigException: error: cannot use SQLite with the LocalExecutor
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+Access Logformat: 
+=================================================================
+[[34m2024-06-21T23:44:29.077-0500[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /dev/null[0m
+/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/flask_limiter/extension.py:333 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+[[34m2024-06-21T23:44:29.454-0500[0m] {[34moverride.py:[0m1427} INFO[0m - Inserted Role: Admin[0m
+[[34m2024-06-21T23:44:29.459-0500[0m] {[34moverride.py:[0m1427} INFO[0m - Inserted Role: Public[0m
+[[34m2024-06-21T23:44:29.467-0500[0m] {[34moverride.py:[0m924} WARNING[0m - No user yet created, use flask fab command to do it.[0m
+[[34m2024-06-21T23:44:29.517-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Passwords[0m
+[[34m2024-06-21T23:44:29.525-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Passwords to role Admin[0m
+[[34m2024-06-21T23:44:29.535-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Passwords[0m
+[[34m2024-06-21T23:44:29.542-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Passwords to role Admin[0m
+[[34m2024-06-21T23:44:29.560-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on My Password[0m
+[[34m2024-06-21T23:44:29.567-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Password to role Admin[0m
+[[34m2024-06-21T23:44:29.576-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on My Password[0m
+[[34m2024-06-21T23:44:29.582-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Password to role Admin[0m
+[[34m2024-06-21T23:44:29.598-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on My Profile[0m
+[[34m2024-06-21T23:44:29.605-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Profile to role Admin[0m
+[[34m2024-06-21T23:44:29.614-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on My Profile[0m
+[[34m2024-06-21T23:44:29.620-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Profile to role Admin[0m
+[[34m2024-06-21T23:44:29.662-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Users[0m
+[[34m2024-06-21T23:44:29.668-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Users to role Admin[0m
+[[34m2024-06-21T23:44:29.677-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Users[0m
+[[34m2024-06-21T23:44:29.684-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Users to role Admin[0m
+[[34m2024-06-21T23:44:29.693-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Users[0m
+[[34m2024-06-21T23:44:29.699-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Users to role Admin[0m
+[[34m2024-06-21T23:44:29.709-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Users[0m
+[[34m2024-06-21T23:44:29.715-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Users to role Admin[0m
+[[34m2024-06-21T23:44:29.731-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on List Users[0m
+[[34m2024-06-21T23:44:29.738-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on List Users to role Admin[0m
+[[34m2024-06-21T23:44:29.754-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Security[0m
+[[34m2024-06-21T23:44:29.761-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Security to role Admin[0m
+[[34m2024-06-21T23:44:29.790-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Roles[0m
+[[34m2024-06-21T23:44:29.797-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Roles to role Admin[0m
+[[34m2024-06-21T23:44:29.806-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Roles[0m
+[[34m2024-06-21T23:44:29.812-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Roles to role Admin[0m
+[[34m2024-06-21T23:44:29.821-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Roles[0m
+[[34m2024-06-21T23:44:29.827-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Roles to role Admin[0m
+[[34m2024-06-21T23:44:29.836-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Roles[0m
+[[34m2024-06-21T23:44:29.842-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Roles to role Admin[0m
+[[34m2024-06-21T23:44:29.859-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on List Roles[0m
+[[34m2024-06-21T23:44:29.865-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on List Roles to role Admin[0m
+[[34m2024-06-21T23:44:29.891-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on User Stats Chart[0m
+[[34m2024-06-21T23:44:29.898-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on User Stats Chart to role Admin[0m
+[[34m2024-06-21T23:44:29.914-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on User's Statistics[0m
+[[34m2024-06-21T23:44:29.920-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on User's Statistics to role Admin[0m
+[[34m2024-06-21T23:44:29.957-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Permissions[0m
+[[34m2024-06-21T23:44:29.964-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Permissions to role Admin[0m
+[[34m2024-06-21T23:44:29.980-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Actions[0m
+[[34m2024-06-21T23:44:29.987-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Actions to role Admin[0m
+[[34m2024-06-21T23:44:30.025-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on View Menus[0m
+[[34m2024-06-21T23:44:30.032-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on View Menus to role Admin[0m
+[[34m2024-06-21T23:44:30.048-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Resources[0m
+[[34m2024-06-21T23:44:30.121-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Resources to role Admin[0m
+[[34m2024-06-21T23:44:30.158-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Permission Views[0m
+[[34m2024-06-21T23:44:30.165-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Permission Views to role Admin[0m
+[[34m2024-06-21T23:44:30.181-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Permission Pairs[0m
+[[34m2024-06-21T23:44:30.188-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Permission Pairs to role Admin[0m
+[[34m2024-06-21T23:44:30.519-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on DAG Runs[0m
+[[34m2024-06-21T23:44:30.527-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on DAG Runs to role Admin[0m
+[[34m2024-06-21T23:44:30.536-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on DAG Runs[0m
+[[34m2024-06-21T23:44:30.542-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Runs to role Admin[0m
+[[34m2024-06-21T23:44:30.551-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on DAG Runs[0m
+[[34m2024-06-21T23:44:30.558-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on DAG Runs to role Admin[0m
+[[34m2024-06-21T23:44:30.567-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on DAG Runs[0m
+[[34m2024-06-21T23:44:30.574-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on DAG Runs to role Admin[0m
+[[34m2024-06-21T23:44:30.583-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on DAG Runs[0m
+[[34m2024-06-21T23:44:30.590-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Runs to role Admin[0m
+[[34m2024-06-21T23:44:30.614-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Browse[0m
+[[34m2024-06-21T23:44:30.621-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Browse to role Admin[0m
+[[34m2024-06-21T23:44:30.652-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Jobs[0m
+[[34m2024-06-21T23:44:30.660-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Jobs to role Admin[0m
+[[34m2024-06-21T23:44:30.669-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Jobs[0m
+[[34m2024-06-21T23:44:30.676-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Jobs to role Admin[0m
+[[34m2024-06-21T23:44:30.724-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Audit Logs[0m
+[[34m2024-06-21T23:44:30.731-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Audit Logs to role Admin[0m
+[[34m2024-06-21T23:44:30.740-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Audit Logs[0m
+[[34m2024-06-21T23:44:30.747-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Audit Logs to role Admin[0m
+[[34m2024-06-21T23:44:30.793-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Variables[0m
+[[34m2024-06-21T23:44:30.801-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Variables to role Admin[0m
+[[34m2024-06-21T23:44:30.809-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Variables[0m
+[[34m2024-06-21T23:44:30.817-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Variables to role Admin[0m
+[[34m2024-06-21T23:44:30.826-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Variables[0m
+[[34m2024-06-21T23:44:30.833-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Variables to role Admin[0m
+[[34m2024-06-21T23:44:30.843-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Variables[0m
+[[34m2024-06-21T23:44:30.893-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Variables to role Admin[0m
+[[34m2024-06-21T23:44:30.907-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Variables[0m
+[[34m2024-06-21T23:44:30.914-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Variables to role Admin[0m
+[[34m2024-06-21T23:44:30.939-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Admin[0m
+[[34m2024-06-21T23:44:30.946-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Admin to role Admin[0m
+[[34m2024-06-21T23:44:30.981-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Task Instances[0m
+[[34m2024-06-21T23:44:30.988-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Task Instances to role Admin[0m
+[[34m2024-06-21T23:44:30.997-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Task Instances[0m
+[[34m2024-06-21T23:44:31.004-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Instances to role Admin[0m
+[[34m2024-06-21T23:44:31.013-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Task Instances[0m
+[[34m2024-06-21T23:44:31.020-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Task Instances to role Admin[0m
+[[34m2024-06-21T23:44:31.029-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Task Instances[0m
+[[34m2024-06-21T23:44:31.036-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Task Instances to role Admin[0m
+[[34m2024-06-21T23:44:31.045-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Task Instances[0m
+[[34m2024-06-21T23:44:31.052-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Task Instances to role Admin[0m
+[[34m2024-06-21T23:44:31.099-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Task Reschedules[0m
+[[34m2024-06-21T23:44:31.107-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Reschedules to role Admin[0m
+[[34m2024-06-21T23:44:31.116-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Task Reschedules[0m
+[[34m2024-06-21T23:44:31.123-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Task Reschedules to role Admin[0m
+[[34m2024-06-21T23:44:31.169-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Triggers[0m
+[[34m2024-06-21T23:44:31.178-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Triggers to role Admin[0m
+[[34m2024-06-21T23:44:31.186-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Triggers[0m
+[[34m2024-06-21T23:44:31.193-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Triggers to role Admin[0m
+[[34m2024-06-21T23:44:31.225-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Configurations[0m
+[[34m2024-06-21T23:44:31.232-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Configurations to role Admin[0m
+[[34m2024-06-21T23:44:31.241-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Configurations[0m
+[[34m2024-06-21T23:44:31.249-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Configurations to role Admin[0m
+[[34m2024-06-21T23:44:31.296-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Connections[0m
+[[34m2024-06-21T23:44:31.303-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Connections to role Admin[0m
+[[34m2024-06-21T23:44:31.312-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Connections[0m
+[[34m2024-06-21T23:44:31.320-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Connections to role Admin[0m
+[[34m2024-06-21T23:44:31.329-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Connections[0m
+[[34m2024-06-21T23:44:31.336-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Connections to role Admin[0m
+[[34m2024-06-21T23:44:31.345-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Connections[0m
+[[34m2024-06-21T23:44:31.353-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Connections to role Admin[0m
+[[34m2024-06-21T23:44:31.362-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Connections[0m
+[[34m2024-06-21T23:44:31.370-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Connections to role Admin[0m
+[[34m2024-06-21T23:44:31.430-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on SLA Misses[0m
+[[34m2024-06-21T23:44:31.438-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on SLA Misses to role Admin[0m
+[[34m2024-06-21T23:44:31.447-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on SLA Misses[0m
+[[34m2024-06-21T23:44:31.455-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on SLA Misses to role Admin[0m
+[[34m2024-06-21T23:44:31.464-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on SLA Misses[0m
+[[34m2024-06-21T23:44:31.472-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on SLA Misses to role Admin[0m
+[[34m2024-06-21T23:44:31.481-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on SLA Misses[0m
+[[34m2024-06-21T23:44:31.489-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on SLA Misses to role Admin[0m
+[[34m2024-06-21T23:44:31.522-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Plugins[0m
+[[34m2024-06-21T23:44:31.530-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Plugins to role Admin[0m
+[[34m2024-06-21T23:44:31.539-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Plugins[0m
+[[34m2024-06-21T23:44:31.546-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Plugins to role Admin[0m
+[[34m2024-06-21T23:44:31.579-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Providers[0m
+[[34m2024-06-21T23:44:31.587-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Providers to role Admin[0m
+[[34m2024-06-21T23:44:31.596-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Providers[0m
+[[34m2024-06-21T23:44:31.603-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Providers to role Admin[0m
+[[34m2024-06-21T23:44:31.651-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Pools[0m
+[[34m2024-06-21T23:44:31.660-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Pools to role Admin[0m
+[[34m2024-06-21T23:44:31.668-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Pools[0m
+[[34m2024-06-21T23:44:31.677-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Pools to role Admin[0m
+[[34m2024-06-21T23:44:31.686-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on Pools[0m
+[[34m2024-06-21T23:44:31.693-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Pools to role Admin[0m
+[[34m2024-06-21T23:44:31.703-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Pools[0m
+[[34m2024-06-21T23:44:31.711-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Pools to role Admin[0m
+[[34m2024-06-21T23:44:31.720-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Pools[0m
+[[34m2024-06-21T23:44:31.728-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Pools to role Admin[0m
+[[34m2024-06-21T23:44:31.775-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on XComs[0m
+[[34m2024-06-21T23:44:31.784-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on XComs to role Admin[0m
+[[34m2024-06-21T23:44:31.793-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on XComs[0m
+[[34m2024-06-21T23:44:31.801-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on XComs to role Admin[0m
+[[34m2024-06-21T23:44:31.810-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on XComs[0m
+[[34m2024-06-21T23:44:31.818-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on XComs to role Admin[0m
+[[34m2024-06-21T23:44:31.861-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on DAG Dependencies[0m
+[[34m2024-06-21T23:44:31.869-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Dependencies to role Admin[0m
+[[34m2024-06-21T23:44:31.915-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on DAGs[0m
+[[34m2024-06-21T23:44:31.923-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAGs to role Admin[0m
+[[34m2024-06-21T23:44:31.940-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Cluster Activity[0m
+[[34m2024-06-21T23:44:31.948-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Cluster Activity to role Admin[0m
+[[34m2024-06-21T23:44:31.965-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Datasets[0m
+[[34m2024-06-21T23:44:31.974-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Datasets to role Admin[0m
+[[34m2024-06-21T23:44:31.991-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Documentation[0m
+[[34m2024-06-21T23:44:32.000-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Documentation to role Admin[0m
+[[34m2024-06-21T23:44:32.017-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: menu access on Docs[0m
+[[34m2024-06-21T23:44:32.025-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Docs to role Admin[0m
+[[34m2024-06-21T23:44:33.316-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can edit on DAGs[0m
+[[34m2024-06-21T23:44:33.328-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on DAGs[0m
+[[34m2024-06-21T23:44:33.341-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on DAGs[0m
+[[34m2024-06-21T23:44:33.444-0500[0m] {[34moverride.py:[0m1427} INFO[0m - Inserted Role: Viewer[0m
+[[34m2024-06-21T23:44:33.452-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAGs to role Viewer[0m
+[[34m2024-06-21T23:44:33.462-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on DAG Dependencies[0m
+[[34m2024-06-21T23:44:33.466-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Dependencies to role Viewer[0m
+[[34m2024-06-21T23:44:33.478-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on DAG Code[0m
+[[34m2024-06-21T23:44:33.482-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Code to role Viewer[0m
+[[34m2024-06-21T23:44:33.487-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Runs to role Viewer[0m
+[[34m2024-06-21T23:44:33.496-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Datasets[0m
+[[34m2024-06-21T23:44:33.500-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Datasets to role Viewer[0m
+[[34m2024-06-21T23:44:33.509-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Cluster Activity[0m
+[[34m2024-06-21T23:44:33.513-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Cluster Activity to role Viewer[0m
+[[34m2024-06-21T23:44:33.518-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Pools to role Viewer[0m
+[[34m2024-06-21T23:44:33.528-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on ImportError[0m
+[[34m2024-06-21T23:44:33.533-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on ImportError to role Viewer[0m
+[[34m2024-06-21T23:44:33.543-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on DAG Warnings[0m
+[[34m2024-06-21T23:44:33.548-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Warnings to role Viewer[0m
+[[34m2024-06-21T23:44:33.553-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Jobs to role Viewer[0m
+[[34m2024-06-21T23:44:33.557-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Password to role Viewer[0m
+[[34m2024-06-21T23:44:33.561-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Password to role Viewer[0m
+[[34m2024-06-21T23:44:33.566-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Profile to role Viewer[0m
+[[34m2024-06-21T23:44:33.570-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Profile to role Viewer[0m
+[[34m2024-06-21T23:44:33.575-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on SLA Misses to role Viewer[0m
+[[34m2024-06-21T23:44:33.579-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Instances to role Viewer[0m
+[[34m2024-06-21T23:44:33.589-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Task Logs[0m
+[[34m2024-06-21T23:44:33.593-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Logs to role Viewer[0m
+[[34m2024-06-21T23:44:33.598-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on XComs to role Viewer[0m
+[[34m2024-06-21T23:44:33.609-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can read on Website[0m
+[[34m2024-06-21T23:44:33.614-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Website to role Viewer[0m
+[[34m2024-06-21T23:44:33.618-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Browse to role Viewer[0m
+[[34m2024-06-21T23:44:33.624-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAGs to role Viewer[0m
+[[34m2024-06-21T23:44:33.628-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Dependencies to role Viewer[0m
+[[34m2024-06-21T23:44:33.633-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Runs to role Viewer[0m
+[[34m2024-06-21T23:44:33.638-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Datasets to role Viewer[0m
+[[34m2024-06-21T23:44:33.643-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Cluster Activity to role Viewer[0m
+[[34m2024-06-21T23:44:33.648-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Documentation to role Viewer[0m
+[[34m2024-06-21T23:44:33.652-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Docs to role Viewer[0m
+[[34m2024-06-21T23:44:33.656-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Jobs to role Viewer[0m
+[[34m2024-06-21T23:44:33.661-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on SLA Misses to role Viewer[0m
+[[34m2024-06-21T23:44:33.666-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Task Instances to role Viewer[0m
+[[34m2024-06-21T23:44:33.671-0500[0m] {[34moverride.py:[0m1427} INFO[0m - Inserted Role: User[0m
+[[34m2024-06-21T23:44:33.677-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAGs to role User[0m
+[[34m2024-06-21T23:44:33.684-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Dependencies to role User[0m
+[[34m2024-06-21T23:44:33.692-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Code to role User[0m
+[[34m2024-06-21T23:44:33.697-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Runs to role User[0m
+[[34m2024-06-21T23:44:33.705-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Datasets to role User[0m
+[[34m2024-06-21T23:44:33.713-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Cluster Activity to role User[0m
+[[34m2024-06-21T23:44:33.717-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Pools to role User[0m
+[[34m2024-06-21T23:44:33.725-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on ImportError to role User[0m
+[[34m2024-06-21T23:44:33.733-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Warnings to role User[0m
+[[34m2024-06-21T23:44:33.737-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Jobs to role User[0m
+[[34m2024-06-21T23:44:33.743-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Password to role User[0m
+[[34m2024-06-21T23:44:33.747-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Password to role User[0m
+[[34m2024-06-21T23:44:33.751-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Profile to role User[0m
+[[34m2024-06-21T23:44:33.756-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Profile to role User[0m
+[[34m2024-06-21T23:44:33.760-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on SLA Misses to role User[0m
+[[34m2024-06-21T23:44:33.765-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Instances to role User[0m
+[[34m2024-06-21T23:44:33.773-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Logs to role User[0m
+[[34m2024-06-21T23:44:33.777-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on XComs to role User[0m
+[[34m2024-06-21T23:44:33.785-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Website to role User[0m
+[[34m2024-06-21T23:44:33.789-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Browse to role User[0m
+[[34m2024-06-21T23:44:33.794-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAGs to role User[0m
+[[34m2024-06-21T23:44:33.798-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Dependencies to role User[0m
+[[34m2024-06-21T23:44:33.803-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Runs to role User[0m
+[[34m2024-06-21T23:44:33.808-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Datasets to role User[0m
+[[34m2024-06-21T23:44:33.812-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Cluster Activity to role User[0m
+[[34m2024-06-21T23:44:33.816-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Documentation to role User[0m
+[[34m2024-06-21T23:44:33.821-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Docs to role User[0m
+[[34m2024-06-21T23:44:33.825-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Jobs to role User[0m
+[[34m2024-06-21T23:44:33.829-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on SLA Misses to role User[0m
+[[34m2024-06-21T23:44:33.834-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Task Instances to role User[0m
+[[34m2024-06-21T23:44:33.839-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on DAGs to role User[0m
+[[34m2024-06-21T23:44:33.843-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on DAGs to role User[0m
+[[34m2024-06-21T23:44:33.847-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Task Instances to role User[0m
+[[34m2024-06-21T23:44:33.852-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Task Instances to role User[0m
+[[34m2024-06-21T23:44:33.857-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Task Instances to role User[0m
+[[34m2024-06-21T23:44:33.861-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on DAG Runs to role User[0m
+[[34m2024-06-21T23:44:33.865-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on DAG Runs to role User[0m
+[[34m2024-06-21T23:44:33.870-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on DAG Runs to role User[0m
+[[34m2024-06-21T23:44:33.879-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can create on Datasets[0m
+[[34m2024-06-21T23:44:33.884-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Datasets to role User[0m
+[[34m2024-06-21T23:44:33.889-0500[0m] {[34moverride.py:[0m1427} INFO[0m - Inserted Role: Op[0m
+[[34m2024-06-21T23:44:33.895-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAGs to role Op[0m
+[[34m2024-06-21T23:44:33.903-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Dependencies to role Op[0m
+[[34m2024-06-21T23:44:33.911-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Code to role Op[0m
+[[34m2024-06-21T23:44:33.915-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Runs to role Op[0m
+[[34m2024-06-21T23:44:33.923-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Datasets to role Op[0m
+[[34m2024-06-21T23:44:33.931-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Cluster Activity to role Op[0m
+[[34m2024-06-21T23:44:33.935-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Pools to role Op[0m
+[[34m2024-06-21T23:44:33.943-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on ImportError to role Op[0m
+[[34m2024-06-21T23:44:33.951-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Warnings to role Op[0m
+[[34m2024-06-21T23:44:33.956-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Jobs to role Op[0m
+[[34m2024-06-21T23:44:33.960-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Password to role Op[0m
+[[34m2024-06-21T23:44:33.964-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Password to role Op[0m
+[[34m2024-06-21T23:44:33.969-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on My Profile to role Op[0m
+[[34m2024-06-21T23:44:33.973-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on My Profile to role Op[0m
+[[34m2024-06-21T23:44:33.978-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on SLA Misses to role Op[0m
+[[34m2024-06-21T23:44:33.982-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Instances to role Op[0m
+[[34m2024-06-21T23:44:33.990-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Logs to role Op[0m
+[[34m2024-06-21T23:44:33.995-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on XComs to role Op[0m
+[[34m2024-06-21T23:44:34.003-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Website to role Op[0m
+[[34m2024-06-21T23:44:34.007-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Browse to role Op[0m
+[[34m2024-06-21T23:44:34.011-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAGs to role Op[0m
+[[34m2024-06-21T23:44:34.016-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Dependencies to role Op[0m
+[[34m2024-06-21T23:44:34.020-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on DAG Runs to role Op[0m
+[[34m2024-06-21T23:44:34.025-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Datasets to role Op[0m
+[[34m2024-06-21T23:44:34.029-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Cluster Activity to role Op[0m
+[[34m2024-06-21T23:44:34.033-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Documentation to role Op[0m
+[[34m2024-06-21T23:44:34.038-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Docs to role Op[0m
+[[34m2024-06-21T23:44:34.042-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Jobs to role Op[0m
+[[34m2024-06-21T23:44:34.046-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on SLA Misses to role Op[0m
+[[34m2024-06-21T23:44:34.050-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Task Instances to role Op[0m
+[[34m2024-06-21T23:44:34.055-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on DAGs to role Op[0m
+[[34m2024-06-21T23:44:34.059-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on DAGs to role Op[0m
+[[34m2024-06-21T23:44:34.063-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Task Instances to role Op[0m
+[[34m2024-06-21T23:44:34.068-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Task Instances to role Op[0m
+[[34m2024-06-21T23:44:34.073-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Task Instances to role Op[0m
+[[34m2024-06-21T23:44:34.077-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on DAG Runs to role Op[0m
+[[34m2024-06-21T23:44:34.082-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on DAG Runs to role Op[0m
+[[34m2024-06-21T23:44:34.087-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on DAG Runs to role Op[0m
+[[34m2024-06-21T23:44:34.095-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Datasets to role Op[0m
+[[34m2024-06-21T23:44:34.099-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Configurations to role Op[0m
+[[34m2024-06-21T23:44:34.104-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Admin to role Op[0m
+[[34m2024-06-21T23:44:34.108-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Configurations to role Op[0m
+[[34m2024-06-21T23:44:34.113-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Connections to role Op[0m
+[[34m2024-06-21T23:44:34.117-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Pools to role Op[0m
+[[34m2024-06-21T23:44:34.122-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Plugins to role Op[0m
+[[34m2024-06-21T23:44:34.127-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Variables to role Op[0m
+[[34m2024-06-21T23:44:34.131-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on Providers to role Op[0m
+[[34m2024-06-21T23:44:34.136-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission menu access on XComs to role Op[0m
+[[34m2024-06-21T23:44:34.140-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Connections to role Op[0m
+[[34m2024-06-21T23:44:34.145-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Connections to role Op[0m
+[[34m2024-06-21T23:44:34.150-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Connections to role Op[0m
+[[34m2024-06-21T23:44:34.154-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Connections to role Op[0m
+[[34m2024-06-21T23:44:34.158-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Pools to role Op[0m
+[[34m2024-06-21T23:44:34.163-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Pools to role Op[0m
+[[34m2024-06-21T23:44:34.167-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Pools to role Op[0m
+[[34m2024-06-21T23:44:34.172-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Plugins to role Op[0m
+[[34m2024-06-21T23:44:34.177-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Providers to role Op[0m
+[[34m2024-06-21T23:44:34.181-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Variables to role Op[0m
+[[34m2024-06-21T23:44:34.186-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Variables to role Op[0m
+[[34m2024-06-21T23:44:34.190-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on Variables to role Op[0m
+[[34m2024-06-21T23:44:34.195-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Variables to role Op[0m
+[[34m2024-06-21T23:44:34.200-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on XComs to role Op[0m
+[[34m2024-06-21T23:44:34.208-0500[0m] {[34moverride.py:[0m1829} INFO[0m - Created Permission View: can delete on Datasets[0m
+[[34m2024-06-21T23:44:34.213-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Datasets to role Op[0m
+[[34m2024-06-21T23:44:34.221-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAGs to role Admin[0m
+[[34m2024-06-21T23:44:34.229-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Dependencies to role Admin[0m
+[[34m2024-06-21T23:44:34.236-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Code to role Admin[0m
+[[34m2024-06-21T23:44:34.245-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Datasets to role Admin[0m
+[[34m2024-06-21T23:44:34.253-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Cluster Activity to role Admin[0m
+[[34m2024-06-21T23:44:34.261-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on ImportError to role Admin[0m
+[[34m2024-06-21T23:44:34.269-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on DAG Warnings to role Admin[0m
+[[34m2024-06-21T23:44:34.277-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Task Logs to role Admin[0m
+[[34m2024-06-21T23:44:34.285-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can read on Website to role Admin[0m
+[[34m2024-06-21T23:44:34.290-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can edit on DAGs to role Admin[0m
+[[34m2024-06-21T23:44:34.294-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on DAGs to role Admin[0m
+[[34m2024-06-21T23:44:34.303-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can create on Datasets to role Admin[0m
+[[34m2024-06-21T23:44:34.311-0500[0m] {[34moverride.py:[0m1880} INFO[0m - Added Permission can delete on Datasets to role Admin[0m
+/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/flask_limiter/extension.py:333 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+[[34m2024-06-21T23:55:23.507-0500[0m] {[34moverride.py:[0m924} WARNING[0m - No user yet created, use flask fab command to do it.[0m
+[2024-06-21 23:55:25 -0500] [15657] [INFO] Starting gunicorn 22.0.0
+[2024-06-21 23:55:26 -0500] [15657] [INFO] Listening at: http://0.0.0.0:8080 (15657)
+[2024-06-21 23:55:26 -0500] [15657] [INFO] Using worker: sync
+[2024-06-21 23:55:26 -0500] [15659] [INFO] Booting worker with pid: 15659
+[2024-06-21 23:55:26 -0500] [15660] [INFO] Booting worker with pid: 15660
+[2024-06-21 23:55:26 -0500] [15661] [INFO] Booting worker with pid: 15661
+[2024-06-21 23:55:26 -0500] [15662] [INFO] Booting worker with pid: 15662
+[2024-06-21 23:55:29 -0500] [15657] [ERROR] Worker (pid:15662) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:29 -0500] [15666] [INFO] Booting worker with pid: 15666
+[2024-06-21 23:55:30 -0500] [15657] [ERROR] Worker (pid:15660) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:30 -0500] [15669] [INFO] Booting worker with pid: 15669
+[2024-06-21 23:55:30 -0500] [15657] [ERROR] Worker (pid:15661) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:30 -0500] [15657] [ERROR] Worker (pid:15666) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:30 -0500] [15671] [INFO] Booting worker with pid: 15671
+[2024-06-21 23:55:30 -0500] [15673] [INFO] Booting worker with pid: 15673
+[2024-06-21 23:55:30 -0500] [15657] [ERROR] Worker (pid:15673) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:30 -0500] [15676] [INFO] Booting worker with pid: 15676
+[2024-06-21 23:55:31 -0500] [15657] [ERROR] Worker (pid:15659) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:31 -0500] [15679] [INFO] Booting worker with pid: 15679
+[2024-06-21 23:55:31 -0500] [15657] [ERROR] Worker (pid:15676) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:31 -0500] [15681] [INFO] Booting worker with pid: 15681
+[2024-06-21 23:55:31 -0500] [15657] [ERROR] Worker (pid:15669) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:31 -0500] [15683] [INFO] Booting worker with pid: 15683
+[2024-06-21 23:55:32 -0500] [15657] [ERROR] Worker (pid:15683) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:32 -0500] [15686] [INFO] Booting worker with pid: 15686
+[2024-06-21 23:55:32 -0500] [15657] [ERROR] Worker (pid:15679) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:32 -0500] [15689] [INFO] Booting worker with pid: 15689
+[2024-06-21 23:55:32 -0500] [15657] [ERROR] Worker (pid:15671) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:32 -0500] [15657] [ERROR] Worker (pid:15689) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:32 -0500] [15692] [INFO] Booting worker with pid: 15692
+[2024-06-21 23:55:33 -0500] [15693] [INFO] Booting worker with pid: 15693
+[2024-06-21 23:55:33 -0500] [15657] [ERROR] Worker (pid:15692) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:33 -0500] [15696] [INFO] Booting worker with pid: 15696
+[2024-06-21 23:55:33 -0500] [15657] [ERROR] Worker (pid:15686) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:33 -0500] [15699] [INFO] Booting worker with pid: 15699
+[2024-06-21 23:55:33 -0500] [15657] [ERROR] Worker (pid:15696) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:33 -0500] [15701] [INFO] Booting worker with pid: 15701
+[2024-06-21 23:55:33 -0500] [15657] [ERROR] Worker (pid:15699) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:33 -0500] [15703] [INFO] Booting worker with pid: 15703
+[2024-06-21 23:55:33 -0500] [15657] [ERROR] Worker (pid:15693) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:34 -0500] [15706] [INFO] Booting worker with pid: 15706
+[2024-06-21 23:55:35 -0500] [15657] [ERROR] Worker (pid:15701) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:35 -0500] [15709] [INFO] Booting worker with pid: 15709
+[2024-06-21 23:55:35 -0500] [15657] [ERROR] Worker (pid:15706) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:35 -0500] [15711] [INFO] Booting worker with pid: 15711
+[2024-06-21 23:55:35 -0500] [15657] [ERROR] Worker (pid:15709) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:35 -0500] [15714] [INFO] Booting worker with pid: 15714
+[2024-06-21 23:55:40 -0500] [15657] [ERROR] Worker (pid:15714) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:40 -0500] [15718] [INFO] Booting worker with pid: 15718
+[2024-06-21 23:55:55 -0500] [15657] [ERROR] Worker (pid:15681) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:55 -0500] [15724] [INFO] Booting worker with pid: 15724
+[2024-06-21 23:55:55 -0500] [15657] [ERROR] Worker (pid:15718) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:55 -0500] [15726] [INFO] Booting worker with pid: 15726
+[2024-06-21 23:55:55 -0500] [15657] [ERROR] Worker (pid:15724) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:55 -0500] [15728] [INFO] Booting worker with pid: 15728
+[2024-06-21 23:55:56 -0500] [15657] [ERROR] Worker (pid:15728) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:55:56 -0500] [15731] [INFO] Booting worker with pid: 15731
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+Access Logformat: 
+=================================================================
+[[34m2024-06-21T23:56:16.579-0500[0m] {[34mwebserver_command.py:[0m430} INFO[0m - Received signal: 15. Closing gunicorn.[0m
+[2024-06-21 23:56:16 -0500] [15657] [INFO] Handling signal: term
+[2024-06-21 23:56:16 -0500] [15726] [INFO] Worker exiting (pid: 15726)
+[2024-06-21 23:56:16 -0500] [15711] [INFO] Worker exiting (pid: 15711)
+[2024-06-21 23:56:16 -0500] [15731] [INFO] Worker exiting (pid: 15731)
+[2024-06-21 23:56:26 -0500] [15657] [ERROR] Worker (pid:15703) was sent SIGKILL! Perhaps out of memory?
+[2024-06-21 23:56:26 -0500] [15657] [INFO] Shutting down: Master

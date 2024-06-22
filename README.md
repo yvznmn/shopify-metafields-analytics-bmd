@@ -67,6 +67,23 @@ nohup airflow scheduler &
 
 ps aux | grep airflow
 
+brew install postgresql
+brew services start postgresql@14
+# Open the db
+psql postgres
+CREATE ROLE <USER_NAME> WITH LOGIN PASSWORD '<PWD>';
+ALTER ROLE <USER_NAME> CREATEDB;
+# Quits Db
+\q 
+psql postgres -U admin
+
+CREATE DATABASE airflow;
+GRANT ALL PRIVILEGES ON DATABASE airflow TO <USER_NAME>;
+\q
+brew services stop postgresql@14
+
+pip install 'apache-airflow[postgres]'
+
 **CONCEPTUAL MODELING**
 
 ![alt text](bmd_conceptual_data_modeling.png)

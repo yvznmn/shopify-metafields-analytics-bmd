@@ -47,7 +47,7 @@ def weekly_streamline_orders_etl_job(spark:SparkSession):
         o.pickup_date
     """
 
-    # Read the data from Redshift Spectrum using the query
+    # Read the data from Redshift Spßectrum using the query
     weekly_streamline_orders = db_utils.run_query_from_redshift(spark, query)
     weekly_streamline_orders.write.format("delta").mode("overwrite").save(delta_table_path)
     db_utils.run_glue_crawler("weeklyStreamlineOrdersCrawler")

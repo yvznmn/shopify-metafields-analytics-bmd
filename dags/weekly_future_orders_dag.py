@@ -55,23 +55,27 @@ def weekly_future_orders_dag():
     task_curr_orders_etl_job = PythonOperator(
         task_id="task_curr_orders_etl_job",
         python_callable=curr_orders_etl_job,
-        op_args=[start_date, end_date]
+        op_args=[start_date, end_date],
+        dag = dag
     )
 
     task_curr_dim_customers_scd = PythonOperator(
         task_id="task_curr_dim_customers_scd",
         python_callable=curr_dim_customers_scd,
-        op_args=[start_date, end_date]
+        op_args=[start_date, end_date],
+        dag = dag
     )
 
     task_weekly_streamline_orders_etl_job= PythonOperator(
         task_id="task_weekly_streamline_orders_etl_job",
-        python_callable=weekly_streamline_orders_etl_job
+        python_callable=weekly_streamline_orders_etl_job,
+        dag = dag
     )
 
     task_future_orders_etl_job = PythonOperator(
         task_id="task_future_orders_etl_job",
-        python_callable=future_orders_etl_job
+        python_callable=future_orders_etl_job,
+        dag = dag
     )
 
     end = EmptyOperator(task_id="end", trigger_rule="all_done")

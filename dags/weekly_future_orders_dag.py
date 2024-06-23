@@ -38,7 +38,7 @@ default_args = {
     dag_id="weekly_future_orders_dag",
     default_args=default_args,
     description="This DAG runs an ETL process for weekly future orders.",
-    schedule_interval="@once",
+    schedule_interval="@daily",
     catchup=False,
     tags=["bmd"],
 )

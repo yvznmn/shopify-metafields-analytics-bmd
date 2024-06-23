@@ -17,7 +17,7 @@ end_date = "2024-06-25"
 if runtime_param_run_type == "default":
     start_date = curr_date
     end_date = curr_date
-    
+
 spark = spark_utils.create_spark_session()
 
 def curr_orders_etl_job(start_date, end_date):
@@ -55,13 +55,13 @@ def weekly_future_orders_dag():
     task_curr_orders_etl_job = PythonOperator(
         task_id="task_curr_orders_etl_job",
         python_callable=curr_orders_etl_job,
-        op_args=[curr_date, curr_date]
+        op_args=[start_date, end_date]
     )
 
     task_curr_dim_customers_scd = PythonOperator(
         task_id="task_curr_dim_customers_scd",
         python_callable=curr_dim_customers_scd,
-        op_args=[curr_date, curr_date]
+        op_args=[start_date, end_date]
     )
 
     task_weekly_streamline_orders_etl_job= PythonOperator(

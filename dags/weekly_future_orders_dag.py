@@ -11,6 +11,13 @@ import pytz
 
 # Get the current date
 curr_date = datetime_utils.get_current_local_date()
+runtime_param_run_type = "custom"
+start_date = "2024-06-20"
+end_date = "2024-06-25"
+if runtime_param_run_type == "default":
+    start_date = curr_date
+    end_date = curr_date
+    
 spark = spark_utils.create_spark_session()
 
 def curr_orders_etl_job(start_date, end_date):
@@ -73,3 +80,5 @@ def weekly_future_orders_dag():
 
 # Instantiate the DAG
 dag_instance = weekly_future_orders_dag()
+
+spark.stop()

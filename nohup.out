@@ -3882,3 +3882,317 @@ com.amazon.redshift#redshift-jdbc42 added as a dependency
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-eed4a1a1-0a6b-4c06-a35c-83d62776ff95;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 488ms :: artifacts dl 20ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-eed4a1a1-0a6b-4c06-a35c-83d62776ff95
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/23 16:31:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-4936d857-78b7-47cb-8bb8-6d28aaf311c4;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 627ms :: artifacts dl 36ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-4936d857-78b7-47cb-8bb8-6d28aaf311c4
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/14ms)
+24/06/23 16:32:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[[34m2024-06-23T16:32:08.561-0500[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-7142efce-d0a3-4242-83e0-b2716a38aa20;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 404ms :: artifacts dl 22ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-7142efce-d0a3-4242-83e0-b2716a38aa20
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/23 16:32:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-eb1ee6d4-620b-41d2-af38-92d3cfb2e6cc;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 704ms :: artifacts dl 29ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-eb1ee6d4-620b-41d2-af38-92d3cfb2e6cc
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/41ms)
+24/06/23 16:33:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/23 16:33:29 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-5fd1d199-dfd2-475b-9b54-1046847e291c;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 425ms :: artifacts dl 24ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-5fd1d199-dfd2-475b-9b54-1046847e291c
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/13ms)
+24/06/23 16:34:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/23 16:34:17 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+24/06/23 16:34:17 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-f3785db7-5b3d-4007-a16b-a0175c1b7a84;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 419ms :: artifacts dl 21ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-f3785db7-5b3d-4007-a16b-a0175c1b7a84
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/14ms)
+24/06/23 16:35:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/23 16:35:01 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+24/06/23 16:35:01 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-2fa3e088-9293-410d-a161-94a3d447ee27;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 458ms :: artifacts dl 62ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-2fa3e088-9293-410d-a161-94a3d447ee27
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/16ms)
+24/06/23 16:35:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/23 16:35:50 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+24/06/23 16:35:50 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-66ab63da-d962-4a64-ae42-5e7d70466935;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 403ms :: artifacts dl 23ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-66ab63da-d962-4a64-ae42-5e7d70466935
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/23 16:36:38 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/23 16:36:40 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+24/06/23 16:36:40 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.

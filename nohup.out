@@ -3844,3 +3844,41 @@ com.amazon.redshift#redshift-jdbc42 added as a dependency
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+:: loading settings :: url = jar:file:/Users/yvznmn/Documents/Projects/capstone-project-yavuz-bmd/venv/lib/python3.9/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/yvznmn/.ivy2/cache
+The jars for the packages stored in: /Users/yvznmn/.ivy2/jars
+io.delta#delta-core_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+com.amazon.redshift#redshift-jdbc42 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-0a58a00d-15be-4b79-8006-a6d70114b8d0;1.0
+	confs: [default]
+	found io.delta#delta-core_2.12;1.2.1 in central
+	found io.delta#delta-storage;1.2.1 in central
+	found org.antlr#antlr4-runtime;4.8 in local-m2-cache
+	found org.codehaus.jackson#jackson-core-asl;1.9.13 in local-m2-cache
+	found org.apache.hadoop#hadoop-aws;3.2.2 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.11.563 in central
+	found com.amazon.redshift#redshift-jdbc42;2.1.0.29 in central
+:: resolution report :: resolve 570ms :: artifacts dl 23ms
+	:: modules in use:
+	com.amazon.redshift#redshift-jdbc42;2.1.0.29 from central in [default]
+	com.amazonaws#aws-java-sdk-bundle;1.11.563 from central in [default]
+	io.delta#delta-core_2.12;1.2.1 from central in [default]
+	io.delta#delta-storage;1.2.1 from central in [default]
+	org.antlr#antlr4-runtime;4.8 from local-m2-cache in [default]
+	org.apache.hadoop#hadoop-aws;3.2.2 from central in [default]
+	org.codehaus.jackson#jackson-core-asl;1.9.13 from local-m2-cache in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   7   |   0   |   0   |   0   ||   7   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-0a58a00d-15be-4b79-8006-a6d70114b8d0
+	confs: [default]
+	0 artifacts copied, 7 already retrieved (0kB/12ms)
+24/06/23 16:30:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).

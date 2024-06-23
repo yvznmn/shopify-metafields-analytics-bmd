@@ -4,15 +4,15 @@ My wife owns a business Bake My Day Organic Bakery (organicbakeryaustin.com), sh
 
 # The Problem
 
-**Main Problem:** We cant make analytical calculations with API Lambda functions. I want to run complex analytics on the data, so I need to create a data warehouse and built data pipelines on top of it.
+<**Main Problem:**> We cant make analytical calculations with API Lambda functions. I want to run complex analytics on the data, so I need to create a data warehouse and built data pipelines on top of it.
 
-**Problem 1:** We have cake orders that needs to be handled to customer in certain date(event_datetime) after the conversation we are having customer. Shopify provides metafields to give custom details to the orders, and we are using it event_datetime type of details about the order. The problem is we do not know in which sequence we should bake the cakes in that week. For example, one time, my wife forgot to bake a cake that needs to be delivered for the next day. If she had this system, she would not miss it. It is extremely time consuming and error-prone for us to go to each upcoming orders and figure out the order of the cakes. Here is the requirements:
+<**Problem 1:**> We have cake orders that needs to be handled to customer in certain date(event_datetime) after the conversation we are having customer. Shopify provides metafields to give custom details to the orders, ex. flavor, theme, order_type(deposit or remaining), event_datetime, etc.. The problem is we do not know in which sequence we should bake the cakes in that week. For example, one time, my wife forgot to bake a cake that needs to be delivered for the next day. If she had this system, she would not miss it. It is extremely time consuming and error-prone for us to go to each upcoming orders and figure out the order of the cakes. Here is the requirements:
 1) We have one deposit and one remaining balance(2 Shopify Orders per request) for each customer request. Either one of them, should be PAID, so we can start baking the cake.
 2) We want to see the details of the orders, so we know what we are baking.
 3) We want to see the customer requests in a table in ascendig order, so that we can see which orders we should work on.
 4) We only want to see this weeks cake requests.
 
-**Problem 2:** The problem is we want to see all the future orders, so that we can plan our personal time offs, and have control over the amount of work we are expecting. This is also beneficial, to see if we are missing anything for the orders we are creating. Here is the requirements:
+<**Problem 2:**> The problem is we want to see all the future orders, so that we can plan our personal time offs, and have control over the amount of work we are expecting. This is also beneficial, to see if we are missing anything for the orders we are creating. Here is the requirements:
 1) For each customer request, we should see 2 records, one for deposit, and one for remaining. If we dont see, this means, we should create the missing one.
 2) We want to see all orders either PAID or UNPAID.
 3) We want to see event_datetime field as ascending order.

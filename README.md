@@ -39,26 +39,36 @@ My wife owns a business Bake My Day Organic Bakery (organicbakeryaustin.com), sh
 # Common Commands and Details
 
 python3 -m venv venv
+
 source venv/bin/activate
 
 pip install pyspark==3.2.1
+
 pip install delta-spark==1.2.1
 
 export PYTHONPATH="${PYTHONPATH}:<YOUR_PROJECT_ROOT>"
+
 export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+
 export AWS_SECRET_KEY=<AWS_SECRET_ACCESS_KEY>
 
+
 <b>In order to generate data</b>
+
 cd test_data
+
 python -c "from generate_data import <function_name>; <function_name>(<params_if_any>)"
 
 <b>Create your DW</b>
+
 provide necessary security inbound rules for the REdshift port and proper IP
+
 provide necessary VPC Network ACL inbound rules for the REdshift port and proper IP
 
 <b>AWS Redshift Spectrum Serverless</b>
 
 CREATE SCHEMA IF NOT EXISTS <schema_name>;
+
 export AIRFLOW_HOME=<airflow_home>
 airflow db init
 airflow users create \
@@ -71,23 +81,39 @@ airflow users create \
 <b>Airflow</b>
 
 brew install postgresql
+
 brew services start postgresql@14
+
 Open the db
+
 psql postgres
+
 CREATE ROLE <USER_NAME> WITH LOGIN PASSWORD '<PWD>';
+
 ALTER ROLE <USER_NAME> CREATEDB;
+
 \q 
+
 psql postgres -U admin
+
 CREATE DATABASE airflow;
+
 GRANT ALL PRIVILEGES ON DATABASE airflow TO <USER_NAME>;
+
 \q
+
 brew services stop postgresql@14
+
 pip install 'apache-airflow[postgres]'
 
 nohup airflow webserver -D &
+
 pkill -f "airflow scheduler"
+
 pkill -f "airflow webserver"
+
 nohup airflow scheduler &
+
 ps aux | grep airflow
 
 # Final Output
